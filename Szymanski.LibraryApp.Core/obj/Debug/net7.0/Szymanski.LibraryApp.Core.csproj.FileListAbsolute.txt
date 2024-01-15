@@ -1,0 +1,12 @@
+/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.Core/bin/Debug/net7.0/Szymanski.LibraryApp.Core.deps.json
+/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.Core/bin/Debug/net7.0/Szymanski.LibraryApp.Core.dll
+/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.Core/bin/Debug/net7.0/Szymanski.LibraryApp.Core.pdb
+/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.Core/obj/Debug/net7.0/Szymanski.LibraryApp.Core.csproj.AssemblyReference.cache
+/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.Core/obj/Debug/net7.0/Szymanski.LibraryApp.Core.GeneratedMSBuildEditorConfig.editorconfig
+/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.Core/obj/Debug/net7.0/Szymanski.LibraryApp.Core.AssemblyInfoInputs.cache
+/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.Core/obj/Debug/net7.0/Szymanski.LibraryApp.Core.AssemblyInfo.cs
+/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.Core/obj/Debug/net7.0/Szymanski.LibraryApp.Core.csproj.CoreCompileInputs.cache
+/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.Core/obj/Debug/net7.0/Szymanski.LibraryApp.Core.dll
+/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.Core/obj/Debug/net7.0/refint/Szymanski.LibraryApp.Core.dll
+/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.Core/obj/Debug/net7.0/Szymanski.LibraryApp.Core.pdb
+/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.Core/obj/Debug/net7.0/ref/Szymanski.LibraryApp.Core.dll

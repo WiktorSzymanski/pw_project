@@ -1,0 +1,61 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.Core/Szymanski.LibraryApp.Core.csproj": {}
+  },
+  "projects": {
+    "/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.Core/Szymanski.LibraryApp.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.Core/Szymanski.LibraryApp.Core.csproj",
+        "projectName": "Szymanski.LibraryApp.Core",
+        "projectPath": "/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.Core/Szymanski.LibraryApp.Core.csproj",
+        "packagesPath": "/home/wiktor/.nuget/packages/",
+        "outputPath": "/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.Core/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/wiktor/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.115/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

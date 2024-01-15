@@ -1,0 +1,107 @@
+{
+  "version": 3,
+  "targets": {
+    "net7.0": {
+      "Szymanski.LibraryApp.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Szymanski.LibraryApp.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Szymanski.LibraryApp.Core.dll": {}
+        }
+      },
+      "Szymanski.LibraryApp.Interfaces/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Szymanski.LibraryApp.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Szymanski.LibraryApp.Interfaces.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Szymanski.LibraryApp.Interfaces.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Szymanski.LibraryApp.Core/1.0.0": {
+      "type": "project",
+      "path": "../Szymanski.LibraryApp.Core/Szymanski.LibraryApp.Core.csproj",
+      "msbuildProject": "../Szymanski.LibraryApp.Core/Szymanski.LibraryApp.Core.csproj"
+    },
+    "Szymanski.LibraryApp.Interfaces/1.0.0": {
+      "type": "project",
+      "path": "../Szymanski.LibraryApp.Interfaces/Szymanski.LibraryApp.Interfaces.csproj",
+      "msbuildProject": "../Szymanski.LibraryApp.Interfaces/Szymanski.LibraryApp.Interfaces.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net7.0": [
+      "Szymanski.LibraryApp.Interfaces >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "/home/wiktor/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.BL/Szymanski.LibraryApp.BL.csproj",
+      "projectName": "Szymanski.LibraryApp.BL",
+      "projectPath": "/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.BL/Szymanski.LibraryApp.BL.csproj",
+      "packagesPath": "/home/wiktor/.nuget/packages/",
+      "outputPath": "/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.BL/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/home/wiktor/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net7.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "projectReferences": {
+            "/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.Interfaces/Szymanski.LibraryApp.Interfaces.csproj": {
+              "projectPath": "/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.Interfaces/Szymanski.LibraryApp.Interfaces.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net7.0": {
+        "targetAlias": "net7.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.115/RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "oXwff947j7TXgae4kt4PFo9p/Z/AYiYmA9a5GkwJJ3KP88cfSk1Bt0EuW+DarLm0dplnKjGw8/rd9KHNLm2dEQ==",
+  "success": true,
+  "projectFilePath": "/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.CLI/Szymanski.LibraryApp.CLI.csproj",
+  "expectedPackageFiles": [
+    "/home/wiktor/.nuget/packages/system.configuration.configurationmanager/8.0.0/system.configuration.configurationmanager.8.0.0.nupkg.sha512",
+    "/home/wiktor/.nuget/packages/system.diagnostics.eventlog/8.0.0/system.diagnostics.eventlog.8.0.0.nupkg.sha512",
+    "/home/wiktor/.nuget/packages/system.security.cryptography.protecteddata/8.0.0/system.security.cryptography.protecteddata.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

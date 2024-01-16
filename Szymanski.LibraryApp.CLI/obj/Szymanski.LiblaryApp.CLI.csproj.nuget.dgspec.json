@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/wiktor/RiderProjects/LibraryApp/Szymanski.LiblaryApp.CLI/Szymanski.LiblaryApp.CLI.csproj": {}
+    "/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.CLI/Szymanski.LibraryApp.CLI.csproj": {}
   },
   "projects": {
-    "/home/wiktor/RiderProjects/LibraryApp/Szymanski.LiblaryApp.CLI/Szymanski.LiblaryApp.CLI.csproj": {
+    "/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.CLI/Szymanski.LibraryApp.CLI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/wiktor/RiderProjects/LibraryApp/Szymanski.LiblaryApp.CLI/Szymanski.LiblaryApp.CLI.csproj",
-        "projectName": "Szymanski.LiblaryApp.CLI",
-        "projectPath": "/home/wiktor/RiderProjects/LibraryApp/Szymanski.LiblaryApp.CLI/Szymanski.LiblaryApp.CLI.csproj",
+        "projectUniqueName": "/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.CLI/Szymanski.LibraryApp.CLI.csproj",
+        "projectName": "Szymanski.LibraryApp.CLI",
+        "projectPath": "/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.CLI/Szymanski.LibraryApp.CLI.csproj",
         "packagesPath": "/home/wiktor/.nuget/packages/",
-        "outputPath": "/home/wiktor/RiderProjects/LibraryApp/Szymanski.LiblaryApp.CLI/obj/",
+        "outputPath": "/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.CLI/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/wiktor/.nuget/NuGet/NuGet.Config"

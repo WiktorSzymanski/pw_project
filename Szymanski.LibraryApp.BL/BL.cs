@@ -40,4 +40,20 @@ public class BL
     
     public IPublisher CreateNewPublisher(int id, string name) =>
         _dao.CreateNewPublisher(id, name);
+    
+    public IBook
+        UpdateBook(int id, string name, IAuthor author, IPublisher publisher, int releaseYear, ISet<Genre> genres) =>
+        _dao.UpdateBook(id, name, author, publisher, releaseYear, genres);
+    
+    public IAuthor UpdateAuthor(int id, string name, string surname, DateTime birthDate) =>
+        _dao.UpdateAuthor(id, name, surname, birthDate);
+    
+    public IPublisher UpdatePublisher(int id, string name) =>
+        _dao.UpdatePublisher(id, name);
+
+    public void DeleteBook(int id) => _dao.DeleteBook(id);
+    
+    public void DeleteAuthor(int id) => _dao.DeleteAuthor(id);
+    
+    public void DeletePublisher(int id) => _dao.DeletePublisher(id);
 }

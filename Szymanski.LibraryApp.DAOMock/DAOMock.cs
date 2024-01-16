@@ -71,7 +71,7 @@ public class DAOMock: IDAO
         return _publishers;
     }
 
-    public IBook CreateNewBook(int id, string name, IAuthor author, IPublisher publisher, int releaseYear, ISet<Genre> genres)
+    public IBook CreateNewBook(int id, string name, IAuthor author, IPublisher publisher, int releaseYear, ICollection<Genre> genres)
     {
         Book book = new Book()
         {
@@ -104,5 +104,80 @@ public class DAOMock: IDAO
         _publishers.Add(publisher);
 
         return publisher;
+    }
+
+    public IBook UpdateBook(int id, string name, IAuthor author, IPublisher publisher, int releaseYear, ICollection<Genre> genres)
+    {
+        var book = _books.FirstOrDefault(b => b.Id == id);
+        if (book != null)
+        {
+            book.Name = name;
+            book.Author = author;
+            book.Publisher = publisher;
+            book.ReleaseYear = releaseYear;
+            book.Genres = genres;
+        }
+        else
+        {
+            throw new Exception("Book not found");
+        }
+
+        return book;         
+    }
+
+    public IAuthor UpdateAuthor(int id, string name, string surname, DateTime birthDate)
+    {
+        var author = _authors.FirstOrDefault(a => a.Id == id);
+        if (author != null)
+        {
+            author.Name = name;
+            author.Surname = surname;
+            author.BirthDate = birthDate;
+        }
+        else
+        {
+            throw new Exception("Author not found");
+        }
+
+        return author;
+    }
+
+    public IPublisher UpdatePublisher(int id, string name)
+    {
+        var publisher = _publishers.FirstOrDefault(a => a.Id == id);
+        if (publisher != null)
+        {
+            publisher.Name = name;
+        }
+        else
+        {
+            throw new Exception("Author not found");
+        }
+
+        return publisher;
+    }
+
+    public void DeleteBook(int id)
+    {
+        var value = _books.FirstOrDefault(a => a.Id == id);
+
+        if (value != null)
+            _books.Remove(value);
+    }
+
+    public void DeleteAuthor(int id)
+    {
+        var value = _authors.FirstOrDefault(a => a.Id == id);
+
+        if (value != null)
+            _authors.Remove(value);
+    }
+
+    public void DeletePublisher(int id)
+    {
+        var value = _publishers.FirstOrDefault(a => a.Id == id);
+
+        if (value != null)
+            _publishers.Remove(value);
     }
 }

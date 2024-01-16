@@ -1,6 +1,6 @@
 using Szymanski.LibraryApp.Interfaces;
 
-namespace Szymanski.LibraryApp.DAOMock.BO;
+namespace Szymanski.LibraryApp.DAOMock2.BO;
 
 public class Author: IAuthor
 {

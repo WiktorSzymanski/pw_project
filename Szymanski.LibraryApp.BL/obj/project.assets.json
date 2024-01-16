@@ -45,19 +45,19 @@
     ]
   },
   "packageFolders": {
-    "/home/wiktor/.nuget/packages/": {}
+    "C:\\Users\\darkv\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.BL/Szymanski.LibraryApp.BL.csproj",
+      "projectUniqueName": "D:\\PP\\7sem\\PW-project\\pw_project\\Szymanski.LibraryApp.BL\\Szymanski.LibraryApp.BL.csproj",
       "projectName": "Szymanski.LibraryApp.BL",
-      "projectPath": "/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.BL/Szymanski.LibraryApp.BL.csproj",
-      "packagesPath": "/home/wiktor/.nuget/packages/",
-      "outputPath": "/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.BL/obj/",
+      "projectPath": "D:\\PP\\7sem\\PW-project\\pw_project\\Szymanski.LibraryApp.BL\\Szymanski.LibraryApp.BL.csproj",
+      "packagesPath": "C:\\Users\\darkv\\.nuget\\packages\\",
+      "outputPath": "D:\\PP\\7sem\\PW-project\\pw_project\\Szymanski.LibraryApp.BL\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/wiktor/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\darkv\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -69,8 +69,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.Interfaces/Szymanski.LibraryApp.Interfaces.csproj": {
-              "projectPath": "/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.Interfaces/Szymanski.LibraryApp.Interfaces.csproj"
+            "D:\\PP\\7sem\\PW-project\\pw_project\\Szymanski.LibraryApp.Interfaces\\Szymanski.LibraryApp.Interfaces.csproj": {
+              "projectPath": "D:\\PP\\7sem\\PW-project\\pw_project\\Szymanski.LibraryApp.Interfaces\\Szymanski.LibraryApp.Interfaces.csproj"
             }
           }
         }
@@ -100,7 +100,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.115/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

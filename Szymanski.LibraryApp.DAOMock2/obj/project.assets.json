@@ -46,19 +46,19 @@
     ]
   },
   "packageFolders": {
-    "/home/wiktor/.nuget/packages/": {}
+    "C:\\Users\\darkv\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.DAOMock2/Szymanski.LibraryApp.DAOMock2.csproj",
+      "projectUniqueName": "D:\\PP\\7sem\\PW-project\\pw_project\\Szymanski.LibraryApp.DAOMock2\\Szymanski.LibraryApp.DAOMock2.csproj",
       "projectName": "Szymanski.LibraryApp.DAOMock2",
-      "projectPath": "/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.DAOMock2/Szymanski.LibraryApp.DAOMock2.csproj",
-      "packagesPath": "/home/wiktor/.nuget/packages/",
-      "outputPath": "/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.DAOMock2/obj/",
+      "projectPath": "D:\\PP\\7sem\\PW-project\\pw_project\\Szymanski.LibraryApp.DAOMock2\\Szymanski.LibraryApp.DAOMock2.csproj",
+      "packagesPath": "C:\\Users\\darkv\\.nuget\\packages\\",
+      "outputPath": "D:\\PP\\7sem\\PW-project\\pw_project\\Szymanski.LibraryApp.DAOMock2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/wiktor/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\darkv\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -70,11 +70,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.Core/Szymanski.LibraryApp.Core.csproj": {
-              "projectPath": "/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.Core/Szymanski.LibraryApp.Core.csproj"
+            "D:\\PP\\7sem\\PW-project\\pw_project\\Szymanski.LibraryApp.Core\\Szymanski.LibraryApp.Core.csproj": {
+              "projectPath": "D:\\PP\\7sem\\PW-project\\pw_project\\Szymanski.LibraryApp.Core\\Szymanski.LibraryApp.Core.csproj"
             },
-            "/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.Interfaces/Szymanski.LibraryApp.Interfaces.csproj": {
-              "projectPath": "/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.Interfaces/Szymanski.LibraryApp.Interfaces.csproj"
+            "D:\\PP\\7sem\\PW-project\\pw_project\\Szymanski.LibraryApp.Interfaces\\Szymanski.LibraryApp.Interfaces.csproj": {
+              "projectPath": "D:\\PP\\7sem\\PW-project\\pw_project\\Szymanski.LibraryApp.Interfaces\\Szymanski.LibraryApp.Interfaces.csproj"
             }
           }
         }
@@ -104,7 +104,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.115/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

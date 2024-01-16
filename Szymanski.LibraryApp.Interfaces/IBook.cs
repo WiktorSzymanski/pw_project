@@ -8,5 +8,5 @@ public interface IBook
     IAuthor Author { get; set; }
     IPublisher Publisher { get; set; }
     int ReleaseYear { get; set; }
-    ISet<Genre> Genres { get; set; }
+    ICollection<Genre> Genres { get; set; }
 }

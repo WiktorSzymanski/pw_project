@@ -7,7 +7,15 @@ public interface IDAO
     IEnumerable<IAuthor> GetAllAuthors();
     IEnumerable<IPublisher> GetAllPublishers();
 
-    IBook CreateNewBook(int id, string name, IAuthor author, IPublisher publisher, int releaseYear, ISet<Genre> genres);
+    IBook CreateNewBook(int id, string name, IAuthor author, IPublisher publisher, int releaseYear, ICollection<Genre> genres);
     IAuthor CreateNewAuthor(int id, string name, string surname, DateTime birthDate);
     IPublisher CreateNewPublisher(int id, string name);
+    
+    IBook UpdateBook(int id, string name, IAuthor author, IPublisher publisher, int releaseYear, ICollection<Genre> genres);
+    IAuthor UpdateAuthor(int id, string name, string surname, DateTime birthDate);
+    IPublisher UpdatePublisher(int id, string name);
+    
+    void DeleteBook(int id);
+    void DeleteAuthor(int id);
+    void DeletePublisher(int id);
 }

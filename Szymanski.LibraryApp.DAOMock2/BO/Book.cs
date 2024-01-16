@@ -1,7 +1,7 @@
 using Szymanski.LibraryApp.Core;
 using Szymanski.LibraryApp.Interfaces;
 
-namespace Szymanski.LibraryApp.DAOMock.BO;
+namespace Szymanski.LibraryApp.DAOMock2.BO;
 
 public class Book: IBook
 {
@@ -10,5 +10,5 @@ public class Book: IBook
     public IAuthor Author { get; set; }
     public IPublisher Publisher { get; set; }
     public int ReleaseYear { get; set; }
-    public ISet<Genre> Genres { get; set; }
+    public ICollection<Genre> Genres { get; set; }
 }

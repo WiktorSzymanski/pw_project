@@ -8,19 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "/home/wiktor/.nuget/packages/": {}
+    "C:\\Users\\darkv\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.Core/Szymanski.LibraryApp.Core.csproj",
+      "projectUniqueName": "D:\\PP\\7sem\\PW-project\\pw_project\\Szymanski.LibraryApp.Core\\Szymanski.LibraryApp.Core.csproj",
       "projectName": "Szymanski.LibraryApp.Core",
-      "projectPath": "/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.Core/Szymanski.LibraryApp.Core.csproj",
-      "packagesPath": "/home/wiktor/.nuget/packages/",
-      "outputPath": "/home/wiktor/RiderProjects/LibraryApp/Szymanski.LibraryApp.Core/obj/",
+      "projectPath": "D:\\PP\\7sem\\PW-project\\pw_project\\Szymanski.LibraryApp.Core\\Szymanski.LibraryApp.Core.csproj",
+      "packagesPath": "C:\\Users\\darkv\\.nuget\\packages\\",
+      "outputPath": "D:\\PP\\7sem\\PW-project\\pw_project\\Szymanski.LibraryApp.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/wiktor/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\darkv\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -59,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.115/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

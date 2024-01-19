@@ -29,7 +29,7 @@ internal class Program
         foreach (IBook book in blc.GetBooks())
         {
             string genres = string.Join(",", book.Genres);
-            Console.WriteLine($"{book.Id} | {book.Name} | {book.ReleaseYear} | {genres} | {book.Author} | {book.Publisher}");
+            Console.WriteLine($"{book.Id} | {book.Name} | {book.ReleaseYear} | {genres} | {book.Author.Name} {book.Author.Surname} | {book.Publisher.Name}");
         }
         Console.WriteLine("==================================");
         

@@ -1,4 +1,5 @@
-﻿using Szymanski.LibraryApp.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using Szymanski.LibraryApp.Interfaces;
 using Szymanski.LibraryApp.DAOSQL.BO;
 using Szymanski.LibraryApp.Core;
 
@@ -15,7 +16,9 @@ public class DAOSQL : IDAO
 
     public IEnumerable<IBook> GetAllBooks()
     {
-        return _context.Books.Select(book => book as IBook).ToList();
+        return _context.Books.Include(book => book.Author)
+            .Include(book => book.Publisher)
+            .Select(book => book as IBook).ToList();
     }
 
     public IEnumerable<IAuthor> GetAllAuthors()

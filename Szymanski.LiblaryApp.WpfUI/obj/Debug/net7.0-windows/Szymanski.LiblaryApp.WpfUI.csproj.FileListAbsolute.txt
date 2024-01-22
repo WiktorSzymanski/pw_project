@@ -47,3 +47,5 @@ D:\PP\7sem\PW-project\pw_project\Szymanski.LiblaryApp.WpfUI\obj\Debug\net7.0-win
 D:\PP\7sem\PW-project\pw_project\Szymanski.LiblaryApp.WpfUI\obj\Debug\net7.0-windows\MVVM\View\AuhtorsView.baml
 D:\PP\7sem\PW-project\pw_project\Szymanski.LiblaryApp.WpfUI\obj\Debug\net7.0-windows\MVVM\View\BooksView.baml
 D:\PP\7sem\PW-project\pw_project\Szymanski.LiblaryApp.WpfUI\obj\Debug\net7.0-windows\MVVM\View\MainWindow.baml
+D:\PP\7sem\PW-project\pw_project\Szymanski.LiblaryApp.WpfUI\obj\Debug\net7.0-windows\MVVM\View\PublishersView.g.cs
+D:\PP\7sem\PW-project\pw_project\Szymanski.LiblaryApp.WpfUI\obj\Debug\net7.0-windows\MVVM\View\PublishersView.baml

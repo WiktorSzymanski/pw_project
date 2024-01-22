@@ -20,6 +20,10 @@
             <Button Content="Books"
                     Height="25"
                     Command="{Binding NavigateBooksCommand}"/>
+            
+            <Button Content="Publishers"
+                    Height="25"
+                    Command="{Binding NavigatePublishersCommand}"/>
         </StackPanel>
         
         <ContentControl Grid.Column="1" Content="{Binding Navigation.CurrentView}">

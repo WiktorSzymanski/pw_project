@@ -23,13 +23,16 @@ public class MainWindowViewModel : Core.ViewModel
     
     public RelayCommand NavigateAuthorsCommand { get; set; }
     public RelayCommand NavigateBooksCommand { get; set; }
+    public RelayCommand NavigatePublishersCommand { get; set; }
     
     public MainWindowViewModel(INavigationService navigationService)
     {
         Navigation = navigationService;
         NavigateAuthorsCommand = new RelayCommand(o => { Navigation.NavigateTo<AuthorsViewModel>(); }, o => true);
         NavigateBooksCommand = new RelayCommand(o => { Navigation.NavigateTo<BooksViewModel>(); }, o => true);
+        NavigatePublishersCommand = new RelayCommand(o => { Navigation.NavigateTo<PublishersViewModel>(); }, o => true);
     }
+    
     // private BL BL;
     // public ObservableCollection<IBook> BooksObservable { get; }
     //

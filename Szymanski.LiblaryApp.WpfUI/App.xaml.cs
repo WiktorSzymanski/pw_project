@@ -32,6 +32,8 @@ namespace Szymanski.LiblaryApp.WpfUI
             services.AddSingleton<MainWindowViewModel>();
             services.AddSingleton<BooksViewModel>(provider => new BooksViewModel(provider.GetRequiredService<BL>()));
             services.AddSingleton<AuthorsViewModel>(provider => new AuthorsViewModel(provider.GetRequiredService<BL>()));
+            services.AddSingleton<PublishersViewModel>(provider => new PublishersViewModel(provider.GetRequiredService<BL>()));
+
             services.AddSingleton<INavigationService, NavigationService>();
             services.AddSingleton(new BL(ConfigurationManager.AppSettings["DAOLibraryName"]));
 

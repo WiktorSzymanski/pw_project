@@ -16,11 +16,9 @@ D:\PP\7sem\PW-project\pw_project\Szymanski.LiblaryApp.WpfUI\bin\Debug\net7.0-win
 D:\PP\7sem\PW-project\pw_project\Szymanski.LiblaryApp.WpfUI\bin\Debug\net7.0-windows\Szymanski.LibraryApp.Core.dll
 D:\PP\7sem\PW-project\pw_project\Szymanski.LiblaryApp.WpfUI\bin\Debug\net7.0-windows\Szymanski.LibraryApp.Core.pdb
 D:\PP\7sem\PW-project\pw_project\Szymanski.LiblaryApp.WpfUI\obj\Debug\net7.0-windows\Szymanski.LiblaryApp.WpfUI.csproj.AssemblyReference.cache
-D:\PP\7sem\PW-project\pw_project\Szymanski.LiblaryApp.WpfUI\obj\Debug\net7.0-windows\MainWindow.g.cs
 D:\PP\7sem\PW-project\pw_project\Szymanski.LiblaryApp.WpfUI\obj\Debug\net7.0-windows\App.g.cs
 D:\PP\7sem\PW-project\pw_project\Szymanski.LiblaryApp.WpfUI\obj\Debug\net7.0-windows\Szymanski.LiblaryApp.WpfUI_MarkupCompile.cache
 D:\PP\7sem\PW-project\pw_project\Szymanski.LiblaryApp.WpfUI\obj\Debug\net7.0-windows\Szymanski.LiblaryApp.WpfUI_MarkupCompile.lref
-D:\PP\7sem\PW-project\pw_project\Szymanski.LiblaryApp.WpfUI\obj\Debug\net7.0-windows\MainWindow.baml
 D:\PP\7sem\PW-project\pw_project\Szymanski.LiblaryApp.WpfUI\obj\Debug\net7.0-windows\Szymanski.LiblaryApp.WpfUI.g.resources
 D:\PP\7sem\PW-project\pw_project\Szymanski.LiblaryApp.WpfUI\obj\Debug\net7.0-windows\Szymanski.LiblaryApp.WpfUI.GeneratedMSBuildEditorConfig.editorconfig
 D:\PP\7sem\PW-project\pw_project\Szymanski.LiblaryApp.WpfUI\obj\Debug\net7.0-windows\Szymanski.LiblaryApp.WpfUI.AssemblyInfoInputs.cache
@@ -41,3 +39,11 @@ D:\PP\7sem\PW-project\pw_project\Szymanski.LiblaryApp.WpfUI\bin\Debug\net7.0-win
 D:\PP\7sem\PW-project\pw_project\Szymanski.LiblaryApp.WpfUI\bin\Debug\net7.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
 D:\PP\7sem\PW-project\pw_project\Szymanski.LiblaryApp.WpfUI\bin\Debug\net7.0-windows\Npgsql.dll
 D:\PP\7sem\PW-project\pw_project\Szymanski.LiblaryApp.WpfUI\bin\Debug\net7.0-windows\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+D:\PP\7sem\PW-project\pw_project\Szymanski.LiblaryApp.WpfUI\obj\Debug\net7.0-windows\MVVM\View\AuhtorsView.g.cs
+D:\PP\7sem\PW-project\pw_project\Szymanski.LiblaryApp.WpfUI\obj\Debug\net7.0-windows\MVVM\View\BooksView.g.cs
+D:\PP\7sem\PW-project\pw_project\Szymanski.LiblaryApp.WpfUI\obj\Debug\net7.0-windows\MVVM\View\MainWindow.g.cs
+D:\PP\7sem\PW-project\pw_project\Szymanski.LiblaryApp.WpfUI\obj\Debug\net7.0-windows\GeneratedInternalTypeHelper.g.cs
+D:\PP\7sem\PW-project\pw_project\Szymanski.LiblaryApp.WpfUI\obj\Debug\net7.0-windows\App.baml
+D:\PP\7sem\PW-project\pw_project\Szymanski.LiblaryApp.WpfUI\obj\Debug\net7.0-windows\MVVM\View\AuhtorsView.baml
+D:\PP\7sem\PW-project\pw_project\Szymanski.LiblaryApp.WpfUI\obj\Debug\net7.0-windows\MVVM\View\BooksView.baml
+D:\PP\7sem\PW-project\pw_project\Szymanski.LiblaryApp.WpfUI\obj\Debug\net7.0-windows\MVVM\View\MainWindow.baml

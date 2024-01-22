@@ -20,4 +20,16 @@
       <ProjectReference Include="..\Szymanski.LibraryApp.Interfaces\Szymanski.LibraryApp.Interfaces.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="MVVM\Model\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Page Update="MVVM\View\BooksView.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+    </ItemGroup>
+
 </Project>

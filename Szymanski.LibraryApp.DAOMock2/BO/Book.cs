@@ -10,5 +10,5 @@ public class Book: IBook
     public IAuthor Author { get; set; }
     public IPublisher Publisher { get; set; }
     public int ReleaseYear { get; set; }
-    public ICollection<Genre> Genres { get; set; }
+    public Genre Genre { get; set; }
 }

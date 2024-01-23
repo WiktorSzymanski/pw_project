@@ -31,16 +31,15 @@ public class DAOSQL : IDAO
         return _context.Publishers.ToList();
     }
 
-    public IBook CreateNewBook(int id, string name, IAuthor author, IPublisher publisher, int releaseYear, ICollection<Genre> genres)
+    public IBook CreateNewBook(int id, string name, IAuthor author, IPublisher publisher, int releaseYear, Genre genre)
     {
         var book = new Book
         {
-            Id = id,
             Name = name,
             Author = (Author) author,
             Publisher = (Publisher) publisher,
             ReleaseYear = releaseYear,
-            Genres = genres
+            Genre = genre
         };
         _context.Books.Add(book);
         _context.SaveChanges();
@@ -51,7 +50,6 @@ public class DAOSQL : IDAO
     {
         var author = new Author
         {
-            Id = id,
             Name = name,
             Surname = surname,
             BirthDate = birthDate
@@ -63,13 +61,13 @@ public class DAOSQL : IDAO
 
     public IPublisher CreateNewPublisher(int id, string name)
     {
-        var publisher = new Publisher {Id = id, Name = name };
+        var publisher = new Publisher { Name = name };
         _context.Publishers.Add(publisher);
         _context.SaveChanges();
         return publisher;
     }
 
-    public IBook UpdateBook(int id, string name, IAuthor author, IPublisher publisher, int releaseYear, ICollection<Genre> genres)
+    public IBook UpdateBook(int id, string name, IAuthor author, IPublisher publisher, int releaseYear, Genre genre)
     {
         var book = _context.Books.Find(id);
         if (book != null)
@@ -78,7 +76,7 @@ public class DAOSQL : IDAO
             book.Author = (Author) author;
             book.Publisher = (Publisher) publisher;
             book.ReleaseYear = releaseYear;
-            book.Genres = genres;
+            book.Genre = genre;
             _context.SaveChanges();
         }
         return (IBook) book;

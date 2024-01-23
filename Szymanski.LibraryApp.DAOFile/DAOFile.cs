@@ -24,10 +24,10 @@ public class DAOFile : IDAO
         return LoadData().Publishers;
     }
     
-    public IBook CreateNewBook(int id, string name, IAuthor author, IPublisher publisher, int releaseYear, ICollection<Genre> genres)
+    public IBook CreateNewBook(int id, string name, IAuthor author, IPublisher publisher, int releaseYear, Genre genre)
     {
         var data = LoadData();
-        var book = new Book() {Id = id, Name = name, Author = author, Publisher = publisher, ReleaseYear = releaseYear, Genres = genres};
+        var book = new Book() {Id = id, Name = name, Author = author, Publisher = publisher, ReleaseYear = releaseYear, Genre = genre};
         data.Books.Add(book);
         SaveData(data);
         return book;
@@ -51,7 +51,7 @@ public class DAOFile : IDAO
         return publisher;
     }
     
-    public IBook UpdateBook(int id, string name, IAuthor author, IPublisher publisher, int releaseYear, ICollection<Genre> genres)
+    public IBook UpdateBook(int id, string name, IAuthor author, IPublisher publisher, int releaseYear, Genre genre)
     {
         var data = LoadData();
         var book = data.Books.FirstOrDefault(b => b.Id == id);
@@ -61,7 +61,7 @@ public class DAOFile : IDAO
         book.Author = author;
         book.Publisher = publisher;
         book.ReleaseYear = releaseYear;
-        book.Genres = genres;
+        book.Genre = genre;
     
         SaveData(data);
         return book;

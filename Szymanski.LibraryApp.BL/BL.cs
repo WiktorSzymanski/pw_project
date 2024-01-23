@@ -32,8 +32,8 @@ public class BL
     public IEnumerable<IPublisher> GetPublishers() => _dao.GetAllPublishers();
 
     public IBook
-        CreateNewBook(int id, string name, IAuthor author, IPublisher publisher, int releaseYear, ISet<Genre> genres) =>
-        _dao.CreateNewBook(id, name, author, publisher, releaseYear, genres);
+        CreateNewBook(int id, string name, IAuthor author, IPublisher publisher, int releaseYear, Genre genre) =>
+        _dao.CreateNewBook(id, name, author, publisher, releaseYear, genre);
     
     public IAuthor CreateNewAuthor(int id, string name, string surname, DateTime birthDate) =>
         _dao.CreateNewAuthor(id, name, surname, birthDate);
@@ -42,8 +42,8 @@ public class BL
         _dao.CreateNewPublisher(id, name);
     
     public IBook
-        UpdateBook(int id, string name, IAuthor author, IPublisher publisher, int releaseYear, ISet<Genre> genres) =>
-        _dao.UpdateBook(id, name, author, publisher, releaseYear, genres);
+        UpdateBook(int id, string name, IAuthor author, IPublisher publisher, int releaseYear, Genre genre) =>
+        _dao.UpdateBook(id, name, author, publisher, releaseYear, genre);
     
     public IAuthor UpdateAuthor(int id, string name, string surname, DateTime birthDate) =>
         _dao.UpdateAuthor(id, name, surname, birthDate);

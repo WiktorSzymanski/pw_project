@@ -29,29 +29,15 @@ public class DAOMock: IDAO
         {
             new Book()
             {
-                Id = 1, Name = "Damn Book", Author = _authors[0], Publisher = _publishers[0], ReleaseYear = 2001, Genres =
-                    new HashSet<Genre>()
-                    {
-                        Genre.Fantasy
-                    }
+                Id = 1, Name = "Damn Book", Author = _authors[0], Publisher = _publishers[0], ReleaseYear = 2001, Genre = Genre.Fantasy
             },
             new Book()
             {
-                Id = 2, Name = "Book About Daniel", Author = _authors[1], Publisher = _publishers[0], ReleaseYear = 2000, Genres =
-                    new HashSet<Genre>()
-                    {
-                        Genre.Horror,
-                        Genre.Romance
-                    }
+                Id = 2, Name = "Book About Daniel", Author = _authors[1], Publisher = _publishers[0], ReleaseYear = 2000, Genre = Genre.Fantasy
             },
             new Book()
             {
-                Id = 3, Name = "KaBook", Author = _authors[2], Publisher = _publishers[1], ReleaseYear = 1990, Genres =
-                    new HashSet<Genre>()
-                    {
-                        Genre.Romance,
-                        Genre.Fantasy
-                    }
+                Id = 3, Name = "KaBook", Author = _authors[2], Publisher = _publishers[1], ReleaseYear = 1990, Genre = Genre.Romance
             },
         };
     }
@@ -71,11 +57,11 @@ public class DAOMock: IDAO
         return _publishers;
     }
 
-    public IBook CreateNewBook(int id, string name, IAuthor author, IPublisher publisher, int releaseYear, ICollection<Genre> genres)
+    public IBook CreateNewBook(int id, string name, IAuthor author, IPublisher publisher, int releaseYear, Genre genre)
     {
         Book book = new Book()
         {
-            Id = id, Name = name, Author = author, Publisher = publisher, ReleaseYear = releaseYear, Genres = genres
+            Id = id, Name = name, Author = author, Publisher = publisher, ReleaseYear = releaseYear, Genre = genre
         };
         _books.Add(book);
 
@@ -106,7 +92,7 @@ public class DAOMock: IDAO
         return publisher;
     }
     
-    public IBook UpdateBook(int id, string name, IAuthor author, IPublisher publisher, int releaseYear, ICollection<Genre> genres)
+    public IBook UpdateBook(int id, string name, IAuthor author, IPublisher publisher, int releaseYear, Genre genre)
     {
         var book = _books.FirstOrDefault(b => b.Id == id);
         if (book != null)
@@ -115,7 +101,7 @@ public class DAOMock: IDAO
             book.Author = author;
             book.Publisher = publisher;
             book.ReleaseYear = releaseYear;
-            book.Genres = genres;
+            book.Genre = genre;
         }
         else
         {

@@ -5,26 +5,34 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:Szymanski.LiblaryApp.WpfUI.MVVM.View"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        Background="#353535">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         
-        <StackPanel>
-            <Button Content="Authors"
-                    Height="25"
-                    Command="{Binding NavigateAuthorsCommand}"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
             
-            <Button Content="Books"
-                    Height="25"
-                    Command="{Binding NavigateBooksCommand}"/>
+            <StackPanel Grid.Row="1">
+                <Button Content="Authors"
+                        Height="25"
+                        Command="{Binding NavigateAuthorsCommand}"/>
             
-            <Button Content="Publishers"
-                    Height="25"
-                    Command="{Binding NavigatePublishersCommand}"/>
-        </StackPanel>
+                <Button Content="Books"
+                        Height="25"
+                        Command="{Binding NavigateBooksCommand}"/>
+            
+                <Button Content="Publishers"
+                        Height="25"
+                        Command="{Binding NavigatePublishersCommand}"/>
+            </StackPanel>
+        </Grid>
         
         <ContentControl Grid.Column="1" Content="{Binding Navigation.CurrentView}">
             

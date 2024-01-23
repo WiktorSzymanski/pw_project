@@ -11,6 +11,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
         <TextBlock Text="Authors"
@@ -20,6 +21,39 @@
                    HorizontalAlignment="Center"/>
         
         <DataGrid Grid.Row="1"
-                  ItemsSource="{Binding Authors}"/>
+                  x:Name="Dg"
+                  ItemsSource="{Binding Authors }"
+                  CellEditEnding="DataGrid_CellEditEnding"
+                  AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id }" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name }"/>
+                <DataGridTextColumn Header="Surname" Binding="{Binding Surname }"/>
+                <DataGridTextColumn Header="Birth Date" Binding="{Binding BirthDate, StringFormat=\{0:dd/MM/yyyy\}}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            
+            <Button Grid.Column="0"
+                    Content="Remove"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Width="100"
+                    Height="30"
+                    Click="RemoveSelectedRecordButton_Click"/>
+            
+            <Button Grid.Column="1"
+                    Content="Add"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Width="100"
+                    Height="30"
+                    Click="AddNewRecordButton_Click"/>
+        </Grid>
     </Grid>
 </UserControl>

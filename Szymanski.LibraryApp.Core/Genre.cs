@@ -2,7 +2,8 @@
 
 public enum Genre
 {
+    NoGenre,
     Fantasy,
     Romance,
-    Horror
+    Horror,
 }

@@ -3,19 +3,18 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:local="clr-namespace:Szymanski.LiblaryApp.WpfUI.MVVM.ViewModel"
         xmlns:viewModel="clr-namespace:Szymanski.LiblaryApp.WpfUI.MVVM.ViewModel"
-        xmlns:view="clr-namespace:Szymanski.LiblaryApp.WpfUI.MVVM.View"
+        xmlns:core="clr-namespace:Szymanski.LiblaryApp.WpfUI.Core"
+        xmlns:local="clr-namespace:Szymanski.LibraryApp.Core;assembly=Szymanski.LibraryApp.Core"
+        xmlns:componentModel="clr-namespace:System.ComponentModel;assembly=WindowsBase"
         mc:Ignorable="d"
         d:DesignHeight="450" d:DesignWidth="800"
-        Background="#252525">
-    <UserControl.Resources>
-        <viewModel:GenreCollectionConverter x:Key="GenreCollectionConverter" />
-    </UserControl.Resources>
+        Background="#353535">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         
         <TextBlock Text="Books"
@@ -25,10 +24,14 @@
                    HorizontalAlignment="Center"/>
         
         <DataGrid Grid.Row="1"
+                  x:Name="Dg"
                   ItemsSource="{Binding Books}"
-                  AutoGenerateColumns="False">
+                  AutoGenerateColumns="False"
+                  CanUserSortColumns="True"
+                  Sorting="dg_Sorting"
+                  CellEditEnding="DataGrid_CellEditEnding">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
         
                 <DataGridComboBoxColumn Header="Author"
@@ -84,9 +87,45 @@
                 
                 <DataGridTextColumn Header="Release Year" Binding="{Binding ReleaseYear}" />
                 
-                <DataGridTextColumn Header="Genres" Binding="{Binding Genres, Converter={StaticResource GenreCollectionConverter}}" />
-        
+                <DataGridComboBoxColumn Header="Genre"
+                                        SelectedItemBinding="{Binding Genre}"
+                                        MinWidth="100">
+                    <DataGridComboBoxColumn.ElementStyle>
+                        <Style TargetType="ComboBox">
+                            <Setter Property="ItemsSource" Value="{Binding Source={core:EnumBindingSource {x:Type local:Genre}}}"/>
+                        </Style>
+                    </DataGridComboBoxColumn.ElementStyle>
+                    <DataGridComboBoxColumn.EditingElementStyle>
+                        <Style TargetType="ComboBox">
+                            <Setter Property="ItemsSource" Value="{Binding Source={core:EnumBindingSource {x:Type local:Genre}}}"/>
+                        </Style>
+                    </DataGridComboBoxColumn.EditingElementStyle>
+                </DataGridComboBoxColumn>
             </DataGrid.Columns>
         </DataGrid>
+        
+        <Grid Grid.Row="2">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+            
+            
+        <Button Grid.Column="0"
+                Content="Remove"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Width="100"
+                Height="30"
+                Click="RemoveSelectedBooksButton_Click"/>
+            
+        <Button Grid.Column="1"
+                Content="Add"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Width="100"
+                Height="30"
+                Click="AddNewBookButton_Click"/>
+        </Grid>
     </Grid>
 </UserControl>

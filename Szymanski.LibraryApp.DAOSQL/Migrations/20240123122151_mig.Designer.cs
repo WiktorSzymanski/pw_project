@@ -12,8 +12,8 @@ using Szymanski.LibraryApp.DAOSQL;
 namespace Szymanski.LibraryApp.DAOSQL.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240116152933_Initial")]
-    partial class Initial
+    [Migration("20240123122151_mig")]
+    partial class mig
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,7 +34,7 @@ namespace Szymanski.LibraryApp.DAOSQL.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("BirthDate")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -57,18 +57,17 @@ namespace Szymanski.LibraryApp.DAOSQL.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("AuthorId")
+                    b.Property<int?>("AuthorId")
                         .HasColumnType("integer");
 
-                    b.Property<string>("Genres")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("Genre")
+                        .HasColumnType("integer");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("PublisherId")
+                    b.Property<int?>("PublisherId")
                         .HasColumnType("integer");
 
                     b.Property<int>("ReleaseYear")
@@ -104,15 +103,11 @@ namespace Szymanski.LibraryApp.DAOSQL.Migrations
                 {
                     b.HasOne("Szymanski.LibraryApp.DAOSQL.BO.Author", "Author")
                         .WithMany()
-                        .HasForeignKey("AuthorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("AuthorId");
 
                     b.HasOne("Szymanski.LibraryApp.DAOSQL.BO.Publisher", "Publisher")
                         .WithMany()
-                        .HasForeignKey("PublisherId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PublisherId");
 
                     b.Navigation("Author");
 

@@ -24,16 +24,15 @@ public class AppDbContext : DbContext
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Book>().HasOne(b => b.Author);
-        modelBuilder.Entity<Book>().HasOne(b => b.Publisher);
-        
         modelBuilder.Entity<Book>()
-            .Property(b => b.Genres)
-            .HasConversion(
-                genres => string.Join(",", genres),
-                str => str.Split(',', StringSplitOptions.RemoveEmptyEntries)
-                    .Select(genre => (Genre)Enum.Parse(typeof(Genre), genre)).ToList());
+            .HasOne(b => b.Author)
+            .WithMany()
+            .OnDelete(DeleteBehavior.SetNull);
 
+        modelBuilder.Entity<Book>()
+            .HasOne(b => b.Publisher)
+            .WithMany()
+            .OnDelete(DeleteBehavior.SetNull);
     }
     
     public DbSet<Book> Books { get; set; }

@@ -1,5 +1,5 @@
 .idea
-**/bin/
-**/build/
-**/out/
-**/obj/
+**/bin/**
+**/build/**
+**/out/**
+**/obj/**

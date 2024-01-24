@@ -35,9 +35,19 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             
-            <Button Grid.Column="0"
+            <Label Grid.Column="0" Content="Search:"
+                   Foreground="White"
+                   VerticalAlignment="Center"/>
+            
+            <TextBox Grid.Column="0" Text="{Binding PublisherSearch, UpdateSourceTrigger=PropertyChanged}"
+                     Width="100"
+                     Height="20"/>
+
+            
+            <Button Grid.Column="1"
                     Content="Remove"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center"
@@ -45,7 +55,7 @@
                     Height="30"
                     Click="RemoveSelectedRecordButton_Click"/>
             
-            <Button Grid.Column="1"
+            <Button Grid.Column="2"
                     Content="Add"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center"

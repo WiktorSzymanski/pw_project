@@ -28,6 +28,24 @@ public class AuthorsViewModel : Core.ViewModel
         Authors = new ObservableCollection<IAuthor>(_blc.GetAuthors());
     }
     
+    private string _authorSearch = string.Empty;
+    public string AuthorSearch
+    {
+        get
+        {
+            return _authorSearch;
+        }
+        set
+        {
+            _authorSearch = value;
+            OnPropertyChanged(nameof(AuthorSearch));
+            SearchAuthors();
+            Refresh();
+        }
+    }
+
+    private Func<IAuthor, bool> _whereFilter = author => true;
+    
     public void UpdateRecord(IAuthor author)
     {
         _blc.UpdateAuthor(author.Id, author.Name, author.Surname, author.BirthDate);
@@ -49,8 +67,26 @@ public class AuthorsViewModel : Core.ViewModel
         Refresh();
     }
     
+    private void SearchAuthors()
+    {
+        
+        if (AuthorSearch != string.Empty)
+        {
+            _whereFilter = author => author.Name.Contains(AuthorSearch, StringComparison.InvariantCultureIgnoreCase) ||
+                                     author.Surname.Contains(AuthorSearch,
+                                         StringComparison.InvariantCultureIgnoreCase) ||
+                                     author.Id.ToString().Contains(AuthorSearch,
+                                         StringComparison.InvariantCultureIgnoreCase) ||
+                                     author.BirthDate.ToString("dd/MM/yyyy").Contains(AuthorSearch,
+                                         StringComparison.InvariantCultureIgnoreCase);
+            return;
+        }
+        
+        _whereFilter = author => true;
+    }
+    
     public override void Refresh()
     {
-        Authors = new ObservableCollection<IAuthor>(_blc.GetAuthors().OrderBy(author => author.Id));
+        Authors = new ObservableCollection<IAuthor>(_blc.GetAuthors().OrderBy(author => author.Id).Where(_whereFilter));
     }
 }

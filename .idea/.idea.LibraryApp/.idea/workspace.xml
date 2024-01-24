@@ -10,37 +10,12 @@
   <component name="ChangeListManager">
     <list default="true" id="7a366f87-4178-4585-9e64-fcf75c876825" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LibraryApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LibraryApp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/MVVM/View/BooksView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/MVVM/View/BooksView.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/MVVM/View/AuhtorsView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/MVVM/View/AuhtorsView.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/MVVM/View/AuhtorsView.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/MVVM/View/AuhtorsView.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/MVVM/View/PublishersView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/MVVM/View/PublishersView.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/MVVM/ViewModel/AuthorsViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/MVVM/ViewModel/AuthorsViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/MVVM/ViewModel/BooksViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/MVVM/ViewModel/BooksViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/Szymanski.LiblaryApp.WpfUI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/Szymanski.LiblaryApp.WpfUI.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/View/AuthorView.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/View/BookView.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/View/PublisherView.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/bin/Debug/net7.0-windows/Szymanski.LiblaryApp.WpfUI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/bin/Debug/net7.0-windows/Szymanski.LiblaryApp.WpfUI.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/bin/Debug/net7.0-windows/Szymanski.LiblaryApp.WpfUI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/bin/Debug/net7.0-windows/Szymanski.LiblaryApp.WpfUI.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/obj/Debug/net7.0-windows/MVVM/View/BooksView.baml" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/obj/Debug/net7.0-windows/MVVM/View/BooksView.baml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/obj/Debug/net7.0-windows/MVVM/View/BooksView.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/obj/Debug/net7.0-windows/MVVM/View/BooksView.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/obj/Debug/net7.0-windows/Szymanski.LiblaryApp.WpfUI.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/obj/Debug/net7.0-windows/Szymanski.LiblaryApp.WpfUI.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/obj/Debug/net7.0-windows/Szymanski.LiblaryApp.WpfUI.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/obj/Debug/net7.0-windows/Szymanski.LiblaryApp.WpfUI.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/obj/Debug/net7.0-windows/Szymanski.LiblaryApp.WpfUI.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/obj/Debug/net7.0-windows/Szymanski.LiblaryApp.WpfUI.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/obj/Debug/net7.0-windows/Szymanski.LiblaryApp.WpfUI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/obj/Debug/net7.0-windows/Szymanski.LiblaryApp.WpfUI.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/obj/Debug/net7.0-windows/Szymanski.LiblaryApp.WpfUI.g.resources" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/obj/Debug/net7.0-windows/Szymanski.LiblaryApp.WpfUI.g.resources" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/obj/Debug/net7.0-windows/Szymanski.LiblaryApp.WpfUI.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/obj/Debug/net7.0-windows/Szymanski.LiblaryApp.WpfUI.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/obj/Debug/net7.0-windows/Szymanski.LiblaryApp.WpfUI_MarkupCompile.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/obj/Debug/net7.0-windows/Szymanski.LiblaryApp.WpfUI_MarkupCompile.lref" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/obj/Debug/net7.0-windows/ref/Szymanski.LiblaryApp.WpfUI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/obj/Debug/net7.0-windows/ref/Szymanski.LiblaryApp.WpfUI.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/obj/Debug/net7.0-windows/refint/Szymanski.LiblaryApp.WpfUI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/obj/Debug/net7.0-windows/refint/Szymanski.LiblaryApp.WpfUI.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Szymanski.LibraryApp.CLI/obj/Debug/net7.0/Szymanski.LibraryApp.CLI.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LibraryApp.CLI/obj/Debug/net7.0/Szymanski.LibraryApp.CLI.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Szymanski.LibraryApp.DAOFile/obj/Debug/net7.0/Szymanski.LibraryApp.DAOFile.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LibraryApp.DAOFile/obj/Debug/net7.0/Szymanski.LibraryApp.DAOFile.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Szymanski.LibraryApp.DAOFile/obj/Debug/net7.0/Szymanski.LibraryApp.DAOFile.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LibraryApp.DAOFile/obj/Debug/net7.0/Szymanski.LibraryApp.DAOFile.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Szymanski.LibraryApp.DAOFile/obj/Debug/net7.0/Szymanski.LibraryApp.DAOFile.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LibraryApp.DAOFile/obj/Debug/net7.0/Szymanski.LibraryApp.DAOFile.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Szymanski.LibraryApp.DAOMock/obj/Debug/net7.0/Szymanski.LibraryApp.DAOMock.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LibraryApp.DAOMock/obj/Debug/net7.0/Szymanski.LibraryApp.DAOMock.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Szymanski.LibraryApp.DAOMock/obj/Debug/net7.0/Szymanski.LibraryApp.DAOMock.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LibraryApp.DAOMock/obj/Debug/net7.0/Szymanski.LibraryApp.DAOMock.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Szymanski.LibraryApp.DAOMock/obj/Debug/net7.0/Szymanski.LibraryApp.DAOMock.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LibraryApp.DAOMock/obj/Debug/net7.0/Szymanski.LibraryApp.DAOMock.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Szymanski.LibraryApp.DAOMock2/obj/Debug/net7.0/Szymanski.LibraryApp.DAOMock2.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LibraryApp.DAOMock2/obj/Debug/net7.0/Szymanski.LibraryApp.DAOMock2.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Szymanski.LibraryApp.DAOMock2/obj/Debug/net7.0/Szymanski.LibraryApp.DAOMock2.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LibraryApp.DAOMock2/obj/Debug/net7.0/Szymanski.LibraryApp.DAOMock2.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Szymanski.LibraryApp.DAOMock2/obj/Debug/net7.0/Szymanski.LibraryApp.DAOMock2.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LibraryApp.DAOMock2/obj/Debug/net7.0/Szymanski.LibraryApp.DAOMock2.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/MVVM/ViewModel/PublishersViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/MVVM/ViewModel/PublishersViewModel.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +122,7 @@
       <workItem from="1705919127552" duration="19771000" />
       <workItem from="1705993268879" duration="20646000" />
       <workItem from="1706088842256" duration="5388000" />
-      <workItem from="1706131459399" duration="3178000" />
+      <workItem from="1706131459399" duration="6981000" />
     </task>
     <servers />
   </component>

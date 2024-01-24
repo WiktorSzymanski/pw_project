@@ -1,3 +1,5 @@
+using System;
+using System.Globalization;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -16,13 +18,34 @@ public partial class AuhtorsView : UserControl
     private void DataGrid_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
     {
         var row = (IAuthor)e.Row.Item;
+        var column = e.Column;
 
-        var nameTextBox = e.EditingElement as TextBox;
-        if (nameTextBox != null)
+ 
+        switch (column.Header)
         {
-            row.Name = nameTextBox.Text;
-            ((AuthorsViewModel)this.DataContext).UpdateRecord(row);
+            case "Name":
+                var nameTextBox = e.EditingElement as TextBox;
+                if (nameTextBox != null)
+                {
+                    row.Name = nameTextBox.Text;
+                }
+                break;
+            case "Surname":
+                var surnameTextBox = e.EditingElement as TextBox;
+                if (surnameTextBox != null)
+                {
+                    row.Surname = surnameTextBox.Text;
+                }
+                break;
+            case "Publisher":
+                var birthDayTextBox = e.EditingElement as TextBox;
+                if (birthDayTextBox != null)
+                {
+                    row.BirthDate =  DateTime.ParseExact(birthDayTextBox.Text, "dd/MM/yyy", CultureInfo.InvariantCulture);
+                }
+                break;
         }
+        ((AuthorsViewModel)this.DataContext).UpdateRecord(row);
     }
     
     private void AddNewRecordButton_Click(object sender, RoutedEventArgs e)

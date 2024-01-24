@@ -22,6 +22,24 @@ public class PublishersViewModel : Core.ViewModel
         }
     }
     
+    private string _publisherSearch = string.Empty;
+    public string PublisherSearch
+    {
+        get
+        {
+            return _publisherSearch;
+        }
+        set
+        {
+            _publisherSearch = value;
+            OnPropertyChanged(nameof(PublisherSearch));
+            SearchPublishers();
+            Refresh();
+        }
+    }
+
+    private Func<IPublisher, bool> _whereFilter = author => true;
+    
     public PublishersViewModel(BL bl)
     {
         _blc = bl;
@@ -47,6 +65,20 @@ public class PublishersViewModel : Core.ViewModel
         }
 
         Refresh();
+    }
+    
+    private void SearchPublishers()
+    {
+        if (PublisherSearch != string.Empty)
+        {
+            _whereFilter = publisher =>
+                publisher.Name.Contains(PublisherSearch, StringComparison.InvariantCultureIgnoreCase) ||
+                publisher.Id.ToString().Contains(PublisherSearch,
+                    StringComparison.InvariantCultureIgnoreCase);
+            return;
+        }
+
+        _whereFilter = publisher => true;
     }
     
     public override void Refresh()

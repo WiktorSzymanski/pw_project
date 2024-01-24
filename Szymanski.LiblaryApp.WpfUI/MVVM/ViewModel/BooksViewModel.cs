@@ -12,7 +12,6 @@ public class BooksViewModel : Core.ViewModel
 {
     private BL _blc;
     
-    
     private ObservableCollection<IBook> _books;
     private ObservableCollection<IAuthor> _authors;
     private ObservableCollection<IPublisher> _publishers;
@@ -46,6 +45,25 @@ public class BooksViewModel : Core.ViewModel
             OnPropertyChanged("Publishers");
         }
     }
+    
+    private string _bookSearch = string.Empty;
+    public string BookSearch
+    {
+        get
+        {
+            return _bookSearch;
+        }
+        set
+        {
+            _bookSearch = value;
+            OnPropertyChanged(nameof(BookSearch));
+            SearchBooks();
+            Refresh();
+        }
+    }
+
+    private Func<IBook, bool> WhereFilter = book => true;
+
     public IEnumerable<Genre> AvailableGenres => Enum.GetValues(typeof(Genre)).Cast<Genre>();
     
     public BooksViewModel(BL bl)
@@ -76,10 +94,33 @@ public class BooksViewModel : Core.ViewModel
 
         Refresh();
     }
+
+    private void SearchBooks()
+    {
+        if (BookSearch != string.Empty)
+        {
+            WhereFilter = book => book.Name.Contains(BookSearch, StringComparison.InvariantCultureIgnoreCase) ||
+                                  (book.Author?.Name.Contains(BookSearch,
+                                      StringComparison.InvariantCultureIgnoreCase) ?? false) ||
+                                  (book.Author?.Surname.Contains(BookSearch,
+                                      StringComparison.InvariantCultureIgnoreCase) ?? false) ||
+                                  (book.Publisher?.Name.Contains(BookSearch,
+                                      StringComparison.InvariantCultureIgnoreCase) ?? false) ||
+                                  book.Genre.ToString().Contains(BookSearch,
+                                      StringComparison.InvariantCultureIgnoreCase) ||
+                                  book.Id.ToString().Contains(BookSearch,
+                                      StringComparison.InvariantCultureIgnoreCase) ||
+                                  book.ReleaseYear.ToString().Contains(BookSearch,
+                                      StringComparison.InvariantCultureIgnoreCase);
+            return;
+        }
+
+        WhereFilter = book => true;
+    }
     
     public override void Refresh()
     {
-        Books = new ObservableCollection<IBook>(_blc.GetBooks().OrderBy(book => book.Id));
+        Books = new ObservableCollection<IBook>(_blc.GetBooks().OrderBy(book => book.Id).Where(WhereFilter));
         Authors = new ObservableCollection<IAuthor>(_blc.GetAuthors());
         Publishers = new ObservableCollection<IPublisher>(_blc.GetPublishers());
     }

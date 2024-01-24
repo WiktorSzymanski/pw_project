@@ -21,10 +21,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="MVVM\Model\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <Page Update="MVVM\View\BooksView.xaml">
         <Generator>MSBuild:Compile</Generator>
         <XamlRuntime>Wpf</XamlRuntime>

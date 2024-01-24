@@ -108,10 +108,18 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
             
+        <Label Grid.Column="0" Content="Search:"
+               Foreground="White"
+               VerticalAlignment="Center"/>
             
-        <Button Grid.Column="0"
+        <TextBox Grid.Column="0" Text="{Binding BookSearch, UpdateSourceTrigger=PropertyChanged}"
+                 Width="100"
+                 Height="20"/>
+            
+        <Button Grid.Column="1"
                 Content="Remove"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Center"
@@ -119,7 +127,7 @@
                 Height="30"
                 Click="RemoveSelectedBooksButton_Click"/>
             
-        <Button Grid.Column="1"
+        <Button Grid.Column="2"
                 Content="Add"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Center"

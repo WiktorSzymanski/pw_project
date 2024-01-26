@@ -97,25 +97,21 @@ public class BooksViewModel : Core.ViewModel
 
     private void SearchBooks()
     {
-        if (BookSearch != string.Empty)
-        {
-            _whereFilter = book => book.Name.Contains(BookSearch, StringComparison.InvariantCultureIgnoreCase) ||
-                                   (book.Author?.Name.Contains(BookSearch,
-                                       StringComparison.InvariantCultureIgnoreCase) ?? false) ||
-                                   (book.Author?.Surname.Contains(BookSearch,
-                                       StringComparison.InvariantCultureIgnoreCase) ?? false) ||
-                                   (book.Publisher?.Name.Contains(BookSearch,
-                                       StringComparison.InvariantCultureIgnoreCase) ?? false) ||
-                                   book.Genre.ToString().Contains(BookSearch,
-                                       StringComparison.InvariantCultureIgnoreCase) ||
-                                   book.Id.ToString().Contains(BookSearch,
-                                       StringComparison.InvariantCultureIgnoreCase) ||
-                                   book.ReleaseYear.ToString().Contains(BookSearch,
-                                       StringComparison.InvariantCultureIgnoreCase);
-            return;
-        }
-
-        _whereFilter = book => true;
+        _whereFilter = string.IsNullOrEmpty(BookSearch) ?
+            _ => true :
+            book => book.Name.Contains(BookSearch, StringComparison.InvariantCultureIgnoreCase) ||
+                    (book.Author?.Name.Contains(BookSearch,
+                        StringComparison.InvariantCultureIgnoreCase) ?? false) ||
+                    (book.Author?.Surname.Contains(BookSearch,
+                        StringComparison.InvariantCultureIgnoreCase) ?? false) ||
+                    (book.Publisher?.Name.Contains(BookSearch,
+                        StringComparison.InvariantCultureIgnoreCase) ?? false) ||
+                    book.Genre.ToString().Contains(BookSearch,
+                        StringComparison.InvariantCultureIgnoreCase) ||
+                    book.Id.ToString().Contains(BookSearch,
+                        StringComparison.InvariantCultureIgnoreCase) ||
+                    book.ReleaseYear.ToString().Contains(BookSearch,
+                        StringComparison.InvariantCultureIgnoreCase);
     }
     
     public override void Refresh()

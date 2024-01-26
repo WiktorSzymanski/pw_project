@@ -59,9 +59,10 @@ public class DAOMock: IDAO
 
     public IBook CreateNewBook(int id, string name, IAuthor author, IPublisher publisher, int releaseYear, Genre genre)
     {
+        var biggestId = _books.MaxBy(obj => obj.Id)?.Id;
         Book book = new Book()
         {
-            Id = id, Name = name, Author = author, Publisher = publisher, ReleaseYear = releaseYear, Genre = genre
+            Id = biggestId.GetValueOrDefault(0) + 1, Name = name, Author = author, Publisher = publisher, ReleaseYear = releaseYear, Genre = genre
         };
         _books.Add(book);
 
@@ -70,9 +71,10 @@ public class DAOMock: IDAO
 
     public IAuthor CreateNewAuthor(int id, string name, string surname, DateTime birthDate)
     {
+        var biggestId = _authors.MaxBy(obj => obj.Id)?.Id;
         Author author = new Author()
         {
-            Id = id, Name = name, Surname = surname, BirthDate = birthDate
+            Id = biggestId.GetValueOrDefault(0) + 1, Name = name, Surname = surname, BirthDate = birthDate
         };
             
         _authors.Add(author);
@@ -82,9 +84,10 @@ public class DAOMock: IDAO
 
     public IPublisher CreateNewPublisher(int id, string name)
     {
+        var biggestId = _publishers.MaxBy(obj => obj.Id)?.Id;
         Publisher publisher = new Publisher()
         {
-            Id = id, Name = name
+            Id = biggestId.GetValueOrDefault(0) + 1, Name = name
         };
             
         _publishers.Add(publisher);
@@ -92,7 +95,7 @@ public class DAOMock: IDAO
         return publisher;
     }
 
-    public IBook UpdateBook(int id, string name, IAuthor author, IPublisher publisher, int releaseYear, Genre genre)
+    public IBook UpdateBook(int id, string name, IAuthor? author, IPublisher? publisher, int releaseYear, Genre genre)
     {
         var book = _books.FirstOrDefault(b => b.Id == id);
         if (book != null)

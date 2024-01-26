@@ -37,11 +37,16 @@ public partial class AuhtorsView : UserControl
                     row.Surname = surnameTextBox.Text;
                 }
                 break;
-            case "Publisher":
+            case "Birth Date":
                 var birthDayTextBox = e.EditingElement as TextBox;
                 if (birthDayTextBox != null)
                 {
-                    row.BirthDate =  DateTime.ParseExact(birthDayTextBox.Text, "dd/MM/yyy", CultureInfo.InvariantCulture);
+                    try
+                    {
+                        row.BirthDate = DateTime.ParseExact(birthDayTextBox.Text, "MM.dd.yyyy",
+                            CultureInfo.CurrentCulture);
+                    }
+                    catch { }
                 }
                 break;
         }

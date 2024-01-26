@@ -10,12 +10,21 @@
   <component name="ChangeListManager">
     <list default="true" id="7a366f87-4178-4585-9e64-fcf75c876825" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LibraryApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LibraryApp/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LibraryApp.sln" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryApp.sln" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/MVVM/View/AuhtorsView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/MVVM/View/AuhtorsView.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/MVVM/View/AuhtorsView.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/MVVM/View/AuhtorsView.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/MVVM/View/PublishersView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/MVVM/View/PublishersView.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/MVVM/ViewModel/AuthorsViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/MVVM/ViewModel/AuthorsViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/MVVM/ViewModel/BooksViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/MVVM/ViewModel/BooksViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/MVVM/ViewModel/PublishersViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/MVVM/ViewModel/PublishersViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/Szymanski.LiblaryApp.WpfUI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LiblaryApp.WpfUI/Szymanski.LiblaryApp.WpfUI.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Szymanski.LibraryApp.BL/BL.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LibraryApp.BL/BL.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Szymanski.LibraryApp.DAOFile/BO/Book.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LibraryApp.DAOFile/BO/Book.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Szymanski.LibraryApp.DAOFile/DAOFile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LibraryApp.DAOFile/DAOFile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Szymanski.LibraryApp.DAOMock/BO/Book.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LibraryApp.DAOMock/BO/Book.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Szymanski.LibraryApp.DAOMock/DAOMock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LibraryApp.DAOMock/DAOMock.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Szymanski.LibraryApp.DAOMock2/DAOMock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LibraryApp.DAOMock2/DAOMock.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Szymanski.LibraryApp.DAOSQL/BO/Book.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LibraryApp.DAOSQL/BO/Book.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Szymanski.LibraryApp.Interfaces/IDAO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanski.LibraryApp.Interfaces/IDAO.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +131,9 @@
       <workItem from="1705919127552" duration="19771000" />
       <workItem from="1705993268879" duration="20646000" />
       <workItem from="1706088842256" duration="5388000" />
-      <workItem from="1706131459399" duration="6981000" />
+      <workItem from="1706131459399" duration="7688000" />
+      <workItem from="1706221296391" duration="4169000" />
+      <workItem from="1706260581631" duration="5669000" />
     </task>
     <servers />
   </component>
@@ -133,6 +144,49 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Szymanski.LibraryApp.DAOFile/DAOFile.cs</url>
+          <line>38</line>
+          <properties documentPath="D:\PP\7sem\PW-project\pw_project\Szymanski.LibraryApp.DAOFile\DAOFile.cs" initialLine="38" containingFunctionPresentation="Method 'CreateNewAuthor'">
+            <startOffsets>
+              <option value="1154" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1176" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Szymanski.LibraryApp.DAOFile/BO/Book.cs</url>
+          <line>13</line>
+          <properties documentPath="D:\PP\7sem\PW-project\pw_project\Szymanski.LibraryApp.DAOFile\BO\Book.cs" initialLine="13" containingFunctionPresentation="Property 'Author'">
+            <startOffsets>
+              <option value="329" />
+            </startOffsets>
+            <endOffsets>
+              <option value="354" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Szymanski.LibraryApp.DAOFile/BO/Book.cs</url>
+          <line>14</line>
+          <properties documentPath="D:\PP\7sem\PW-project\pw_project\Szymanski.LibraryApp.DAOFile\BO\Book.cs" initialLine="14" containingFunctionPresentation="Property 'Author'">
+            <startOffsets>
+              <option value="363" />
+            </startOffsets>
+            <endOffsets>
+              <option value="395" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Frame#Szymanski.LibraryApp.DAOFile.DAOFile.CreateNewAuthor" memberName="data" />

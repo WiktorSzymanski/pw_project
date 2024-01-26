@@ -29,7 +29,7 @@
                 <DataGridTextColumn Header="ID" Binding="{Binding Id }" IsReadOnly="True"/>
                 <DataGridTextColumn Header="Name" Binding="{Binding Name }"/>
                 <DataGridTextColumn Header="Surname" Binding="{Binding Surname }"/>
-                <DataGridTextColumn Header="Birth Date" Binding="{Binding BirthDate, StringFormat=\{0:dd.MM.yyyy\}}"/>
+                <DataGridTextColumn Header="Birth Date" Binding="{Binding BirthDate, StringFormat=\{0:MM.dd.yyyy\}}"/>
             </DataGrid.Columns>
         </DataGrid>
         

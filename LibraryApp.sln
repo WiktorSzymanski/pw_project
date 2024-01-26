@@ -8,8 +8,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Szymanski.LibraryApp.BL", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Szymanski.LibraryApp.DAOMock", "Szymanski.LibraryApp.DAOMock\Szymanski.LibraryApp.DAOMock.csproj", "{42612481-BD3A-4FDC-A652-61F96BB0A6B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Szymanski.LibraryApp.CLI", "Szymanski.LibraryApp.CLI\Szymanski.LibraryApp.CLI.csproj", "{FD9DE559-6FFE-45DD-880F-41D8915D7601}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Szymanski.LibraryApp.DAOMock2", "Szymanski.LibraryApp.DAOMock2\Szymanski.LibraryApp.DAOMock2.csproj", "{F458E0ED-52A1-46A8-A313-143211BB141D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Szymanski.LibraryApp.DAOFile", "Szymanski.LibraryApp.DAOFile\Szymanski.LibraryApp.DAOFile.csproj", "{EF31B034-FB07-44AD-9C82-8485AF66D950}"
@@ -40,10 +38,6 @@ Global
 		{42612481-BD3A-4FDC-A652-61F96BB0A6B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42612481-BD3A-4FDC-A652-61F96BB0A6B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42612481-BD3A-4FDC-A652-61F96BB0A6B0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FD9DE559-6FFE-45DD-880F-41D8915D7601}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FD9DE559-6FFE-45DD-880F-41D8915D7601}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FD9DE559-6FFE-45DD-880F-41D8915D7601}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FD9DE559-6FFE-45DD-880F-41D8915D7601}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F458E0ED-52A1-46A8-A313-143211BB141D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F458E0ED-52A1-46A8-A313-143211BB141D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F458E0ED-52A1-46A8-A313-143211BB141D}.Release|Any CPU.ActiveCfg = Release|Any CPU

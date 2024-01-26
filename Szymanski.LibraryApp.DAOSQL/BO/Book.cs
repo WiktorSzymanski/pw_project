@@ -14,7 +14,7 @@ public class Book : IBook
     public Genre Genre { get; set; }
 
     [NotMapped]
-    IAuthor IBook.Author
+    IAuthor? IBook.Author
     {
         get
         {
@@ -25,7 +25,7 @@ public class Book : IBook
             Author = (Author) value;
         }
     }
-    [NotMapped] IPublisher IBook.Publisher
+    [NotMapped] IPublisher? IBook.Publisher
     {
         get
         {

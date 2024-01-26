@@ -77,7 +77,7 @@ public class AuthorsViewModel : Core.ViewModel
                                          StringComparison.InvariantCultureIgnoreCase) ||
                                      author.Id.ToString().Contains(AuthorSearch,
                                          StringComparison.InvariantCultureIgnoreCase) ||
-                                     author.BirthDate.ToString("dd/MM/yyyy").Contains(AuthorSearch,
+                                     author.BirthDate.ToString("MM/dd/yyyy").Contains(AuthorSearch,
                                          StringComparison.InvariantCultureIgnoreCase);
             return;
         }

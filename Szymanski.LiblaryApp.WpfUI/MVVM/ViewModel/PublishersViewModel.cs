@@ -69,20 +69,16 @@ public class PublishersViewModel : Core.ViewModel
     
     private void SearchPublishers()
     {
-        if (PublisherSearch != string.Empty)
-        {
-            _whereFilter = publisher =>
-                publisher.Name.Contains(PublisherSearch, StringComparison.InvariantCultureIgnoreCase) ||
-                publisher.Id.ToString().Contains(PublisherSearch,
-                    StringComparison.InvariantCultureIgnoreCase);
-            return;
-        }
-
-        _whereFilter = publisher => true;
+            _whereFilter = string.IsNullOrEmpty(PublisherSearch) ?
+                _ => true :
+                publisher => publisher.Name.Contains(PublisherSearch,
+                                 StringComparison.InvariantCultureIgnoreCase) ||
+                             publisher.Id.ToString().Contains(PublisherSearch, 
+                                 StringComparison.InvariantCultureIgnoreCase);
     }
     
     public override void Refresh()
     {
-        Publishers = new ObservableCollection<IPublisher>(_blc.GetPublishers().OrderBy(publisher => publisher.Id));
+        Publishers = new ObservableCollection<IPublisher>(_blc.GetPublishers().OrderBy(publisher => publisher.Id).Where(_whereFilter));
     }
 }

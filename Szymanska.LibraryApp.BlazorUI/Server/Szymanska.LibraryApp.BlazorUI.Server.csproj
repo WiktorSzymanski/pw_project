@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="7.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Szymanski.LibraryApp.BL\Szymanski.LibraryApp.BL.csproj" />
+    <ProjectReference Include="..\..\Szymanski.LibraryApp.Core\Szymanski.LibraryApp.Core.csproj" />
+    <ProjectReference Include="..\..\Szymanski.LibraryApp.DAOFile\Szymanski.LibraryApp.DAOFile.csproj" />
+    <ProjectReference Include="..\..\Szymanski.LibraryApp.DAOMock\Szymanski.LibraryApp.DAOMock.csproj" />
+    <ProjectReference Include="..\..\Szymanski.LibraryApp.DAOSQL\Szymanski.LibraryApp.DAOSQL.csproj" />
+    <ProjectReference Include="..\..\Szymanski.LibraryApp.Interfaces\Szymanski.LibraryApp.Interfaces.csproj" />
+    <ProjectReference Include="..\Client\Szymanska.LibraryApp.BlazorUI.Client.csproj" />
+    <ProjectReference Include="..\Shared\Szymanska.LibraryApp.BlazorUI.Shared.csproj" />
+  </ItemGroup>
+
+
+</Project>

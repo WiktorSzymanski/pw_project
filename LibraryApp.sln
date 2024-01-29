@@ -1,20 +1,29 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Szymanski.LibraryApp.Core", "Szymanski.LibraryApp.Core\Szymanski.LibraryApp.Core.csproj", "{53371653-9AFC-4444-8E23-3B307A7A4C8D}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Szymanski.LibraryApp.Core", "Szymanski.LibraryApp.Core\Szymanski.LibraryApp.Core.csproj", "{53371653-9AFC-4444-8E23-3B307A7A4C8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Szymanski.LibraryApp.Interfaces", "Szymanski.LibraryApp.Interfaces\Szymanski.LibraryApp.Interfaces.csproj", "{E0717EEA-5026-4A32-BD77-E9A022D75795}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Szymanski.LibraryApp.Interfaces", "Szymanski.LibraryApp.Interfaces\Szymanski.LibraryApp.Interfaces.csproj", "{E0717EEA-5026-4A32-BD77-E9A022D75795}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Szymanski.LibraryApp.BL", "Szymanski.LibraryApp.BL\Szymanski.LibraryApp.BL.csproj", "{54D2BF7D-56B7-40F0-8FB3-BC1BF685CC12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Szymanski.LibraryApp.BL", "Szymanski.LibraryApp.BL\Szymanski.LibraryApp.BL.csproj", "{54D2BF7D-56B7-40F0-8FB3-BC1BF685CC12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Szymanski.LibraryApp.DAOMock", "Szymanski.LibraryApp.DAOMock\Szymanski.LibraryApp.DAOMock.csproj", "{42612481-BD3A-4FDC-A652-61F96BB0A6B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Szymanski.LibraryApp.DAOMock", "Szymanski.LibraryApp.DAOMock\Szymanski.LibraryApp.DAOMock.csproj", "{42612481-BD3A-4FDC-A652-61F96BB0A6B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Szymanski.LibraryApp.DAOMock2", "Szymanski.LibraryApp.DAOMock2\Szymanski.LibraryApp.DAOMock2.csproj", "{F458E0ED-52A1-46A8-A313-143211BB141D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Szymanski.LibraryApp.DAOMock2", "Szymanski.LibraryApp.DAOMock2\Szymanski.LibraryApp.DAOMock2.csproj", "{F458E0ED-52A1-46A8-A313-143211BB141D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Szymanski.LibraryApp.DAOFile", "Szymanski.LibraryApp.DAOFile\Szymanski.LibraryApp.DAOFile.csproj", "{EF31B034-FB07-44AD-9C82-8485AF66D950}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Szymanski.LibraryApp.DAOFile", "Szymanski.LibraryApp.DAOFile\Szymanski.LibraryApp.DAOFile.csproj", "{EF31B034-FB07-44AD-9C82-8485AF66D950}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Szymanski.LibraryApp.DAOSQL", "Szymanski.LibraryApp.DAOSQL\Szymanski.LibraryApp.DAOSQL.csproj", "{2B313B23-D806-406F-9FA9-A9F97C30834D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Szymanski.LibraryApp.DAOSQL", "Szymanski.LibraryApp.DAOSQL\Szymanski.LibraryApp.DAOSQL.csproj", "{2B313B23-D806-406F-9FA9-A9F97C30834D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Szymanski.LiblaryApp.WpfUI", "Szymanski.LiblaryApp.WpfUI\Szymanski.LiblaryApp.WpfUI.csproj", "{A60BE594-793D-4017-BFD9-7CA9689A67B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Szymanski.LiblaryApp.WpfUI", "Szymanski.LiblaryApp.WpfUI\Szymanski.LiblaryApp.WpfUI.csproj", "{A60BE594-793D-4017-BFD9-7CA9689A67B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Szymanska.LibraryApp.BlazorUI.Server", "Szymanska.LibraryApp.BlazorUI\Server\Szymanska.LibraryApp.BlazorUI.Server.csproj", "{A3D8BCA9-7A56-4DC5-A460-2D69741274EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Szymanska.LibraryApp.BlazorUI.Client", "Szymanska.LibraryApp.BlazorUI\Client\Szymanska.LibraryApp.BlazorUI.Client.csproj", "{8D297330-3F2E-49F6-BEAB-8F4D31088260}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Szymanska.LibraryApp.BlazorUI.Shared", "Szymanska.LibraryApp.BlazorUI\Shared\Szymanska.LibraryApp.BlazorUI.Shared.csproj", "{C6223899-D5F8-4ACF-A7F2-13D3E1745047}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,5 +63,20 @@ Global
 		{A60BE594-793D-4017-BFD9-7CA9689A67B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A60BE594-793D-4017-BFD9-7CA9689A67B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A60BE594-793D-4017-BFD9-7CA9689A67B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3D8BCA9-7A56-4DC5-A460-2D69741274EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3D8BCA9-7A56-4DC5-A460-2D69741274EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3D8BCA9-7A56-4DC5-A460-2D69741274EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3D8BCA9-7A56-4DC5-A460-2D69741274EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D297330-3F2E-49F6-BEAB-8F4D31088260}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D297330-3F2E-49F6-BEAB-8F4D31088260}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D297330-3F2E-49F6-BEAB-8F4D31088260}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D297330-3F2E-49F6-BEAB-8F4D31088260}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6223899-D5F8-4ACF-A7F2-13D3E1745047}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6223899-D5F8-4ACF-A7F2-13D3E1745047}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6223899-D5F8-4ACF-A7F2-13D3E1745047}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6223899-D5F8-4ACF-A7F2-13D3E1745047}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal

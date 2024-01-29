@@ -1,0 +1,57 @@
+﻿@page "/books"
+@inject IBookService BookService
+@inject NavigationManager NavigationManager
+
+<h3>Books</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Publisher</th>
+            <th>Release Year</th>
+            <th>Genre</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in BookService.Books)
+        {
+            <tr>
+                <td>@book.Name</td>
+                <td>@($"{book.Author?.Name} {book.Author?.Surname}")</td>
+                <td>@book.Publisher?.Name</td>
+                <td>@book.ReleaseYear</td>
+                <td>@book.Genre</td>
+                <td>
+                    <button class="btn btn-primary"
+                            @onclick="(() => ShowBook(book.Id))">
+                        <i class="oi oi-pencil"></i>
+                    </button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<button class="btn btn-primary"
+        @onclick="CreateNewBook">
+    Create New Book
+</button>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        await BookService.GetBooks();
+    }
+
+    void ShowBook(int id)
+    {
+        NavigationManager.NavigateTo($"book/{id}");
+    }
+
+    void CreateNewBook()
+    {
+        NavigationManager.NavigateTo("/book");
+    }
+}

@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Szymanska.LibraryApp.BlazorUI.Server.Services.BookService;
+using Szymanska.LibraryApp.BlazorUI.Shared;
 using Szymanski.LibraryApp.Core;
-using Szymanski.LibraryApp.DAOSQL.BO;
 using Szymanski.LibraryApp.Interfaces;
 
 namespace Szymanski.LibraryApp.BlazorUI.Server.Controllers

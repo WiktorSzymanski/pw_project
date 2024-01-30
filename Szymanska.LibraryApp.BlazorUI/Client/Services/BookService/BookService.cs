@@ -1,4 +1,8 @@
-﻿using Szymanski.LibraryApp.BL;
+﻿using System.Collections.Generic;
+using System.Net.Http;
+using System.Net.Http.Json;
+using System.Threading.Tasks;
+using Szymanska.LibraryApp.BlazorUI.Shared;
 using Szymanski.LibraryApp.Core;
 using Szymanski.LibraryApp.Interfaces;
 
@@ -6,45 +10,35 @@ namespace Szymanska.LibraryApp.BlazorUI.Client.Services.BookService
 {
     public class BookService : IBookService
     {
-        private readonly BL _bl;
+        private readonly HttpClient _httpClient;
 
-        public BookService(BL bl)
+        public List<Book> Books { get; set; } = new List<Book>();
+
+        public BookService(HttpClient httpClient)
         {
-            _bl = bl;
+            _httpClient = httpClient;
         }
 
-        public List<IBook> Books { get; set; } = new List<IBook>();
-
-        public async Task CreateBook(IBook book)
+        public async Task GetBooks()
         {
-            // Użyj odpowiedniej metody z warstwy BL do dodania książki
-            _bl.CreateNewBook(book.Id, book.Name, book.Author, book.Publisher, book.ReleaseYear, book.Genre);
+            Books = await _httpClient.GetFromJsonAsync<List<Book>>("api/book");
+        }
 
-            // Pobierz zaktualizowaną listę książek
+        public async Task CreateBook(Book book)
+        {
+            await _httpClient.PostAsJsonAsync("api/book", book);
+            await GetBooks();
+        }
+
+        public async Task UpdateBook(int id, Book book)
+        {
+            await _httpClient.PutAsJsonAsync($"api/book/{id}", book);
             await GetBooks();
         }
 
         public async Task DeleteBook(int id)
         {
-            // Użyj odpowiedniej metody z warstwy BL do usunięcia książki
-            _bl.DeleteBook(id);
-
-            // Pobierz zaktualizowaną listę książek
-            await GetBooks();
-        }
-
-        public async Task GetBooks()
-        {
-            // Użyj odpowiedniej metody z warstwy BL do pobrania wszystkich książek
-            Books = _bl.GetBooks().ToList();
-        }
-
-        public async Task UpdateBook(int id, IBook book)
-        {
-            // Użyj odpowiedniej metody z warstwy BL do aktualizacji książki
-            _bl.UpdateBook(id, book.Name, book.Author, book.Publisher, book.ReleaseYear, book.Genre);
-
-            // Pobierz zaktualizowaną listę książek
+            await _httpClient.DeleteAsync($"api/book/{id}");
             await GetBooks();
         }
     }

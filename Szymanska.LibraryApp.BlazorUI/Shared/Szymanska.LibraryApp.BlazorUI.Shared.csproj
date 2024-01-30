@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Szymanski.LibraryApp.BL\Szymanski.LibraryApp.BL.csproj" />
+    <ProjectReference Include="..\..\Szymanski.LibraryApp.Core\Szymanski.LibraryApp.Core.csproj" />
+    <ProjectReference Include="..\..\Szymanski.LibraryApp.Interfaces\Szymanski.LibraryApp.Interfaces.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <SupportedPlatform Include="browser" />
   </ItemGroup>
 </Project>

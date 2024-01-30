@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.DependencyInjection;
 using Szymanska.LibraryApp.BlazorUI.Server.Services.BookService;
 using Szymanski.LibraryApp.BL;
-using Szymanski.LibraryApp.DAOSQL;
 using Szymanski.LibraryApp.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,9 +11,21 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
-builder.Services.AddDbContext<AppDbContext>();
 builder.Services.AddScoped<IBookService, BookService>();
-builder.Services.AddScoped<IDAO, DAOSQL>();
+
+//builder.Services.AddScoped<BL>()
+//;
+//builder.Services.AddSingleton<BL>();
+
+//builder.Services.AddSingleton<BL>(provider =>
+//{
+//    return new BL("..\\..\\Szymanski.LibraryApp.DAOSQL\\bin\\Debug\\net7.0\\Szymanski.LibraryApp.DAOSQL.dll");
+//});
+
+//builder.Services.AddScoped(sp => new BL("Szymanski.LibraryApp.DAOSQL.dll"));
+
+builder.Services.AddScoped(sp => new BL("..\\..\\Szymanski.LibraryApp.DAOMock\\bin\\Debug\\net7.0\\Szymanski.LibraryApp.DAOMock.dll"));
+
 
 var app = builder.Build();
 

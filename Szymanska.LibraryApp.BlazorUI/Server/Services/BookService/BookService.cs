@@ -1,75 +1,38 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
-using Microsoft.EntityFrameworkCore;
 using Szymanski.LibraryApp.BL;
 using Szymanski.LibraryApp.Core;
 using Szymanski.LibraryApp.Interfaces;
-using Szymanski.LibraryApp.DAOSQL;
-using Szymanski.LibraryApp.DAOSQL.BO;
+using Szymanska.LibraryApp.BlazorUI.Shared;
 
 namespace Szymanska.LibraryApp.BlazorUI.Server.Services.BookService
 {
     public class BookService : IBookService
     {
-        private readonly AppDbContext _context;
+        private readonly BL _bl;
 
-        public BookService(AppDbContext context)
+        public BookService(BL bl)
         {
-            _context = context;
+            _bl = bl;
         }
 
-        public IEnumerable<IBook> GetBooks()
+        public IEnumerable<Book> GetBooks()
         {
-            return _context.Books.Include(book => book.Author)
-                                 .Include(book => book.Publisher)
-                                 .ToList();
+            return (IEnumerable<Book>)_bl.GetBooks();
         }
 
-        public IBook CreateBook(int id, string name, IAuthor author, IPublisher publisher, int releaseYear, Genre genre)
+        public Book CreateBook(int id, string name, IAuthor author, IPublisher publisher, int releaseYear, Genre genre)
         {
-            var book = new Book
-            {
-                Id = id,
-                Name = name,
-                Author = (Author)author,
-                Publisher = (Publisher)publisher,
-                ReleaseYear = releaseYear,
-                Genre = genre
-            };
-
-            _context.Books.Add(book);
-            _context.SaveChanges();
-
-            return book;
+            return (Book)_bl.CreateNewBook(id, name, author, publisher, releaseYear, genre);
         }
 
-        public IBook UpdateBook(int id, string name, IAuthor author, IPublisher publisher, int releaseYear, Genre genre)
+        public Book UpdateBook(int id, string name, IAuthor author, IPublisher publisher, int releaseYear, Genre genre)
         {
-            var book = _context.Books.Find(id);
-
-            if (book != null)
-            {
-                book.Name = name;
-                book.Author = (Author)author;
-                book.Publisher = (Publisher)publisher;
-                book.ReleaseYear = releaseYear;
-                book.Genre = genre;
-
-                _context.SaveChanges();
-            }
-
-            return book;
+            return (Book)_bl.UpdateBook(id, name, author, publisher, releaseYear, genre);
         }
 
         public void DeleteBook(int id)
         {
-            var book = _context.Books.Find(id);
-
-            if (book != null)
-            {
-                _context.Books.Remove(book);
-                _context.SaveChanges();
-            }
+            _bl.DeleteBook(id);
         }
     }
 }

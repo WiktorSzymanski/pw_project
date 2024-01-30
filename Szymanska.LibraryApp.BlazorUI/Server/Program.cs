@@ -24,7 +24,7 @@ builder.Services.AddScoped<IBookService, BookService>();
 
 //builder.Services.AddScoped(sp => new BL("Szymanski.LibraryApp.DAOSQL.dll"));
 
-builder.Services.AddScoped(sp => new BL("bin/Debug/net7.0/Szymanski.LibraryApp.DAOMock.dll"));
+builder.Services.AddScoped(sp => new BL("bin/Debug/net7.0/Szymanski.LibraryApp.DAOSQL.dll"));
 
 
 var app = builder.Build();

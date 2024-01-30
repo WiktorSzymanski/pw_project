@@ -18,5 +18,9 @@
     <ProjectReference Include="..\Shared\Szymanska.LibraryApp.BlazorUI.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\appsettings.json" />
+  </ItemGroup>
+
 
 </Project>

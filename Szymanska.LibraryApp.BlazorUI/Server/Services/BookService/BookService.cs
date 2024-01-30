@@ -15,9 +15,9 @@ namespace Szymanska.LibraryApp.BlazorUI.Server.Services.BookService
             _bl = bl;
         }
 
-        public IEnumerable<Book> GetBooks()
+        public IEnumerable<IBook> GetBooks()
         {
-            return (IEnumerable<Book>)_bl.GetBooks();
+            return _bl.GetBooks();
         }
 
         public Book CreateBook(int id, string name, IAuthor author, IPublisher publisher, int releaseYear, Genre genre)

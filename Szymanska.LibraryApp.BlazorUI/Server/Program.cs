@@ -1,3 +1,4 @@
+using System.Reflection;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.DependencyInjection;
 using Szymanska.LibraryApp.BlazorUI.Server.Services.BookService;
@@ -17,9 +18,12 @@ builder.Services.AddScoped<IBookService, BookService>();
 builder.Services.AddScoped<IAuthorService, AuthorService>();
 builder.Services.AddScoped<IPublisherService, PublisherService>();
 
-//builder.Services.AddSingleton(sp => new BL("/bin/Debug/net7.0/Szymanski.LibraryApp.DAOMock.dll"));
-builder.Services.AddSingleton(sp => new BL("../../Szymanski.LibraryApp.DAOMock/bin/Debug/net7.0/Szymanski.LibraryApp.DAOMock.dll"));
 
+string daoPath = Path.Combine(
+    Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)!,
+    builder.Configuration["DAOName"]!);
+
+builder.Services.AddSingleton(sp => new BL(daoPath));
 
 var app = builder.Build();
 

@@ -17,6 +17,7 @@
     <list default="true" id="7a366f87-4178-4585-9e64-fcf75c876825" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LibraryApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LibraryApp/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Szymanska.LibraryApp.BlazorUI/Server/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanska.LibraryApp.BlazorUI/Server/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Szymanska.LibraryApp.BlazorUI/Server/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Szymanska.LibraryApp.BlazorUI/Server/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,6 +225,23 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Szymanska.LibraryApp.BlazorUI/Server/Program.cs</url>
+          <line>25</line>
+          <properties documentPath="D:\PP\7sem\PW-project\pw_project\Szymanska.LibraryApp.BlazorUI\Server\Program.cs" initialLine="24" containingFunctionPresentation="">
+            <startOffsets>
+              <option value="888" />
+            </startOffsets>
+            <endOffsets>
+              <option value="941" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Frame#Szymanski.LibraryApp.DAOFile.DAOFile.CreateNewAuthor" memberName="data" />

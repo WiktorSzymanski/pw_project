@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System.Reflection;
+using Newtonsoft.Json;
 using Szymanski.LibraryApp.Core;
 using Szymanski.LibraryApp.DAOFile.BO;
 using Szymanski.LibraryApp.Interfaces;
@@ -7,7 +8,16 @@ namespace Szymanski.LibraryApp.DAOFile;
 
 public class DAOFile : IDAO
 {
-    private const string DataFile = "data.json";
+    private string _dataFile;
+
+    public DAOFile()
+    {
+        _dataFile = Path.Combine(
+            Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)!,
+            "data.json"
+        );
+       
+    }
     
     public IEnumerable<IBook> GetAllBooks()
     {
@@ -131,7 +141,7 @@ public class DAOFile : IDAO
         string json = null;
         try
         {
-            json = File.ReadAllText(DataFile);
+            json = File.ReadAllText(_dataFile);
         } catch { }
 
         if (string.IsNullOrEmpty(json))
@@ -145,7 +155,7 @@ public class DAOFile : IDAO
     private void SaveData(Data data)
     {
         var json = JsonConvert.SerializeObject(data);
-        File.WriteAllText(DataFile, json);
+        File.WriteAllText(_dataFile, json);
     }
 }
 

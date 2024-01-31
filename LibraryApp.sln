@@ -19,11 +19,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Szymanski.LibraryApp.DAOSQL
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Szymanski.LiblaryApp.WpfUI", "Szymanski.LiblaryApp.WpfUI\Szymanski.LiblaryApp.WpfUI.csproj", "{A60BE594-793D-4017-BFD9-7CA9689A67B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Szymanska.LibraryApp.BlazorUI.Server", "Szymanska.LibraryApp.BlazorUI\Server\Szymanska.LibraryApp.BlazorUI.Server.csproj", "{A3D8BCA9-7A56-4DC5-A460-2D69741274EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Szymanska.LibraryApp.BlazorUI.Server", "Szymanska.LibraryApp.BlazorUI\Server\Szymanska.LibraryApp.BlazorUI.Server.csproj", "{A3D8BCA9-7A56-4DC5-A460-2D69741274EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Szymanska.LibraryApp.BlazorUI.Client", "Szymanska.LibraryApp.BlazorUI\Client\Szymanska.LibraryApp.BlazorUI.Client.csproj", "{8D297330-3F2E-49F6-BEAB-8F4D31088260}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Szymanska.LibraryApp.BlazorUI.Client", "Szymanska.LibraryApp.BlazorUI\Client\Szymanska.LibraryApp.BlazorUI.Client.csproj", "{8D297330-3F2E-49F6-BEAB-8F4D31088260}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Szymanska.LibraryApp.BlazorUI.Shared", "Szymanska.LibraryApp.BlazorUI\Shared\Szymanska.LibraryApp.BlazorUI.Shared.csproj", "{C6223899-D5F8-4ACF-A7F2-13D3E1745047}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Szymanska.LibraryApp.BlazorUI.Shared", "Szymanska.LibraryApp.BlazorUI\Shared\Szymanska.LibraryApp.BlazorUI.Shared.csproj", "{C6223899-D5F8-4ACF-A7F2-13D3E1745047}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -78,5 +78,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {029B3E11-1BEA-4B14-8676-4A7BE0744313}
 	EndGlobalSection
 EndGlobal

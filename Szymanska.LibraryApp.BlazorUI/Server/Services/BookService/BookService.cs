@@ -20,14 +20,42 @@ namespace Szymanska.LibraryApp.BlazorUI.Server.Services.BookService
             return _bl.GetBooks();
         }
 
-        public Book CreateBook(int id, string name, IAuthor author, IPublisher publisher, int releaseYear, Genre genre)
+        public Book CreateBook(int id, string name, Author author, Publisher publisher, int releaseYear, Genre genre)
         {
-            return (Book)_bl.CreateNewBook(id, name, author, publisher, releaseYear, genre);
+            //return _bl.CreateNewBook(id, name, author, publisher, releaseYear, genre);
+            
+            var daoBook = _bl.CreateNewBook(id, name, author, publisher, releaseYear, genre);
+
+            var sharedBook = new Book
+            {
+                Id = daoBook.Id,
+                Name = daoBook.Name,
+                Author = (Author)daoBook.Author,
+                Publisher = (Publisher)daoBook.Publisher,
+                ReleaseYear = daoBook.ReleaseYear,
+                Genre = daoBook.Genre
+            };
+
+            return sharedBook;
         }
 
-        public Book UpdateBook(int id, string name, IAuthor author, IPublisher publisher, int releaseYear, Genre genre)
+        public Book UpdateBook(int id, string name, Author author, Publisher publisher, int releaseYear, Genre genre)
         {
-            return (Book)_bl.UpdateBook(id, name, author, publisher, releaseYear, genre);
+            //return (Book)_bl.UpdateBook(id, name, author, publisher, releaseYear, genre);
+
+            var daoBook = _bl.UpdateBook(id, name, author, publisher, releaseYear, genre);
+
+            var sharedBook = new Book
+            {
+                Id = daoBook.Id,
+                Name = daoBook.Name,
+                Author = (Author)daoBook.Author,
+                Publisher = (Publisher)daoBook.Publisher,
+                ReleaseYear = daoBook.ReleaseYear,
+                Genre = daoBook.Genre
+            };
+
+            return sharedBook;
         }
 
         public void DeleteBook(int id)

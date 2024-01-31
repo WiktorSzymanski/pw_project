@@ -1,0 +1,120 @@
+﻿@page "/book/{Id:int?}"
+@inject IBookService BookService
+@inject IAuthorService AuthorService
+@inject IPublisherService PublisherService
+@inject NavigationManager NavigationManager
+
+<h3>@(IsEditMode ? "Edit Book" : "Create New Book")</h3>
+
+<div class="form-group">
+    <label for="name">Title:</label>
+    <input class="form-control" id="name" @bind="Book.Name" />
+</div>
+<div class="form-group">
+    <label for="author">Author:</label>
+    <select class="form-control" id="author" @bind="SelectedAuthorId">
+        <option value="">Select Author</option>
+        @foreach (var author in AuthorService.Authors)
+        {
+            <option value="@author.Id">@($"{author.Name} {author.Surname}")</option>
+        }
+    </select>
+</div>
+<div class="form-group">
+    <label for="publisher">Publisher:</label>
+    <select class="form-control" id="publisher" @bind="SelectedPublisherId">
+        <option value="">Select Publisher</option>
+        @foreach (var publisher in PublisherService.Publishers)
+        {
+            <option value="@publisher.Id">@publisher.Name</option>
+        }
+    </select>
+</div>
+<div class="form-group">
+    <label for="releaseYear">Release Year:</label>
+    <input type="number" class="form-control" id="releaseYear" @bind="Book.ReleaseYear" />
+</div>
+<div class="form-group">
+    <label for="genre">Genre:</label>
+    <select class="form-control" id="genre" @bind="Book.Genre">
+        <option value="">Select Genre</option>
+        @foreach (var genreOption in GetGenreOptions())
+        {
+            <option value="@genreOption">@genreOption</option>
+        }
+    </select>
+</div>
+<div class="form-group">
+    <button class="btn btn-primary" @onclick="SaveBook">Save</button>
+    <button class="btn btn-secondary" @onclick="Cancel">Cancel</button>
+</div>
+
+@code {
+    [Parameter]
+    public int? Id { get; set; }
+
+    private Book Book { get; set; } = new Book();
+    private bool IsEditMode => Id.HasValue && Id != 0;
+
+    private int? SelectedAuthorId { get; set; }
+    private int? SelectedPublisherId { get; set; }
+
+    private List<string> GetGenreOptions()
+    {
+        return Enum.GetNames(typeof(Genre)).ToList();
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await BookService.GetBooks();
+        await AuthorService.GetAuthors();
+        await PublisherService.GetPublishers();
+
+        Console.WriteLine($"Number of loaded authors: {AuthorService.Authors.Count()}");
+        Console.WriteLine($"Number of loaded publishers: {PublisherService.Publishers.Count()}");
+        Console.WriteLine($"Number of loaded books: {BookService.Books.Count()}");
+
+
+        if (IsEditMode)
+        {
+            // Edit mode - znajdź książkę o podanym Id
+            Book = BookService.Books.FirstOrDefault(b => b.Id == Id) ?? new Book();
+
+            if (Book != null)
+            {
+                SelectedAuthorId = Book.Author?.Id;
+                SelectedPublisherId = Book.Publisher?.Id;
+            }
+        }
+        else
+        {
+            // Create mode - utwórz nową pustą książkę
+            SelectedAuthorId = AuthorService.Authors.FirstOrDefault()?.Id;
+            SelectedPublisherId = PublisherService.Publishers.FirstOrDefault()?.Id;
+        }
+    }
+
+    async Task SaveBook()
+    {
+        Book.Author = AuthorService.Authors.FirstOrDefault(a => a.Id == SelectedAuthorId);
+        Book.Publisher = PublisherService.Publishers.FirstOrDefault(p => p.Id == SelectedPublisherId);
+        
+        if (IsEditMode)
+        {
+            await BookService.UpdateBook(Book.Id, Book);
+        }
+        else
+        {
+            await BookService.CreateBook(Book);
+        }
+
+        //await BookService.GetBooks();
+        //StateHasChanged();
+        NavigationManager.NavigateTo("/books");
+    }
+
+    void Cancel()
+    {
+        NavigationManager.NavigateTo("/books");
+    }
+}

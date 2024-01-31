@@ -3,7 +3,7 @@ using Szymanska.LibraryApp.BlazorUI.Shared;
 using Szymanski.LibraryApp.Core;
 using Szymanski.LibraryApp.Interfaces;
 
-namespace Szymanski.LibraryApp.BlazorUI.Server.Controllers
+namespace Szymanska.LibraryApp.BlazorUI.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

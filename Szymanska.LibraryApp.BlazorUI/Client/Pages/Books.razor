@@ -25,17 +25,18 @@
                 <td>@book.ReleaseYear</td>
                 <td>@book.Genre</td>
                 <td>
-                    <button class="btn btn-primary"
-                            @onclick="(() => ShowBook(book.Id))">
+                    <button class="btn btn-primary" @onclick="(() => ShowBook(book.Id))">
                         <i class="oi oi-pencil"></i>
+                    </button>
+                    <button class="btn btn-danger" @onclick="(() => DeleteBook(book.Id))">
+                        <i class="oi oi-trash"></i>
                     </button>
                 </td>
             </tr>
         }
     </tbody>
 </table>
-<button class="btn btn-primary"
-        @onclick="CreateNewBook">
+<button class="btn btn-primary" @onclick="CreateNewBook">
     Create New Book
 </button>
 
@@ -48,6 +49,12 @@
     void ShowBook(int id)
     {
         NavigationManager.NavigateTo($"book/{id}");
+    }
+
+    async Task DeleteBook(int id)
+    {
+        await BookService.DeleteBook(id);
+        await BookService.GetBooks();
     }
 
     void CreateNewBook()

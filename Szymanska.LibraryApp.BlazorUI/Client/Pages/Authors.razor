@@ -1,0 +1,60 @@
+﻿@page "/authors"
+@inject IAuthorService AuthorService
+@inject NavigationManager NavigationManager
+
+<h3>Authors</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Birth Date</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var author in AuthorService.Authors)
+        {
+            <tr>
+                <td>@author.Name</td>
+                <td>@author.Surname</td>
+                <td>@author.BirthDate.ToShortDateString()</td>
+                <td>
+                    <button class="btn btn-primary" @onclick="(() => ShowAuthor(author.Id))">
+                        <i class="oi oi-pencil"></i>
+                    </button>
+                    <button class="btn btn-danger" @onclick="(() => DeleteAuthor(author.Id))">
+                        <i class="oi oi-trash"></i>
+                    </button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<button class="btn btn-primary" @onclick="CreateNewAuthor">
+    Create New Author
+</button>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        await AuthorService.GetAuthors();
+    }
+
+    void ShowAuthor(int id)
+    {
+        NavigationManager.NavigateTo($"author/{id}");
+    }
+
+    async Task DeleteAuthor(int id)
+    {
+        await AuthorService.DeleteAuthor(id);
+        await AuthorService.GetAuthors();
+    }
+
+    void CreateNewAuthor()
+    {
+        NavigationManager.NavigateTo("/author");
+    }
+}

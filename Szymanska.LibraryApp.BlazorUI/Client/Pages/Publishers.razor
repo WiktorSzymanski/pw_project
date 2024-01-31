@@ -1,0 +1,56 @@
+﻿@page "/publishers"
+@inject IPublisherService PublisherService
+@inject NavigationManager NavigationManager
+
+<h3>Publishers</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var publisher in PublisherService.Publishers)
+        {
+            <tr>
+                <td>@publisher.Name</td>
+                <td>
+                    <button class="btn btn-primary" @onclick="(() => ShowPublisher(publisher.Id))">
+                        <i class="oi oi-pencil"></i>
+                    </button>
+                    <button class="btn btn-danger" @onclick="(() => DeletePublisher(publisher.Id))">
+                        <i class="oi oi-trash"></i>
+                    </button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<button class="btn btn-primary" @onclick="CreateNewPublisher">
+    Create New Publisher
+</button>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        await PublisherService.GetPublishers();
+    }
+
+    void ShowPublisher(int id)
+    {
+        NavigationManager.NavigateTo($"publisher/{id}");
+    }
+
+    async Task DeletePublisher(int id)
+    {
+        await PublisherService.DeletePublisher(id);
+        await PublisherService.GetPublishers();
+    }
+
+    void CreateNewPublisher()
+    {
+        NavigationManager.NavigateTo("/publisher");
+    }
+}

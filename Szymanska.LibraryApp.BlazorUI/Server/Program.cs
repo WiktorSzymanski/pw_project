@@ -19,8 +19,7 @@ builder.Services.AddScoped<IPublisherService, PublisherService>();
 
 //builder.Services.AddScoped(sp => new BL("bin/Debug/net7.0/Szymanski.LibraryApp.DAOSQL.dll"));
 //builder.Services.AddScoped(sp => new BL("../../Szymanski.LibraryApp.DAOSQL/bin/Debug/net7.0/Szymanski.LibraryApp.DAOSQL.dll"));
-builder.Services.AddScoped(sp => new BL("../../Szymanski.LibraryApp.DAOMock/bin/Debug/net7.0/Szymanski.LibraryApp.DAOMock.dll"));
-
+builder.Services.AddSingleton(sp => new BL("../../Szymanski.LibraryApp.DAOMock/bin/Debug/net7.0/Szymanski.LibraryApp.DAOMock.dll"));
 
 var app = builder.Build();
 

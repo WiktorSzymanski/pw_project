@@ -20,47 +20,67 @@ namespace Szymanska.LibraryApp.BlazorUI.Server.Services.BookService
             return _bl.GetBooks();
         }
 
-        public Book CreateBook(int id, string name, Author author, Publisher publisher, int releaseYear, Genre genre)
+        public IBook CreateBook(int id, string name, IAuthor author, IPublisher publisher, int releaseYear, Genre genre)
         {
-            //return _bl.CreateNewBook(id, name, author, publisher, releaseYear, genre);
-            
-            var daoBook = _bl.CreateNewBook(id, name, author, publisher, releaseYear, genre);
+            return _bl.CreateNewBook(id, name, author, publisher, releaseYear, genre);
 
-            var sharedBook = new Book
-            {
-                Id = daoBook.Id,
-                Name = daoBook.Name,
-                Author = (Author)daoBook.Author,
-                Publisher = (Publisher)daoBook.Publisher,
-                ReleaseYear = daoBook.ReleaseYear,
-                Genre = daoBook.Genre
-            };
+            //var newBook = _bl.CreateNewBook(id, name, author, publisher, releaseYear, genre);
 
-            return sharedBook;
+            //var mappedBook = new Book
+            //{
+            //    Id = newBook.Id,
+            //    Name = newBook.Name,
+            //    Author = newBook.Author != null ? MapAuthor(newBook.Author) : null,
+            //    Publisher = newBook.Publisher != null ? MapPublisher(newBook.Publisher) : null,
+            //    ReleaseYear = newBook.ReleaseYear,
+            //    Genre = newBook.Genre
+            //};
+
+            //return mappedBook;
         }
 
-        public Book UpdateBook(int id, string name, Author author, Publisher publisher, int releaseYear, Genre genre)
+        public IBook UpdateBook(int id, string name, IAuthor author, IPublisher publisher, int releaseYear, Genre genre)
         {
-            //return (Book)_bl.UpdateBook(id, name, author, publisher, releaseYear, genre);
+            return _bl.UpdateBook(id, name, author, publisher, releaseYear, genre);
 
-            var daoBook = _bl.UpdateBook(id, name, author, publisher, releaseYear, genre);
+            //var updatedBook = _bl.UpdateBook(id, name, author, publisher, releaseYear, genre);
 
-            var sharedBook = new Book
-            {
-                Id = daoBook.Id,
-                Name = daoBook.Name,
-                Author = (Author)daoBook.Author,
-                Publisher = (Publisher)daoBook.Publisher,
-                ReleaseYear = daoBook.ReleaseYear,
-                Genre = daoBook.Genre
-            };
+            //var mappedBook = new Book
+            //{
+            //    Id = updatedBook.Id,
+            //    Name = updatedBook.Name,
+            //    Author = updatedBook.Author != null ? MapAuthor(updatedBook.Author) : null,
+            //    Publisher = updatedBook.Publisher != null ? MapPublisher(updatedBook.Publisher) : null,
+            //    ReleaseYear = updatedBook.ReleaseYear,
+            //    Genre = updatedBook.Genre
+            //};
 
-            return sharedBook;
+            //return mappedBook;
         }
 
         public void DeleteBook(int id)
         {
             _bl.DeleteBook(id);
         }
+
+        //private Author MapAuthor(IAuthor author)
+        //{
+        //    return new Author
+        //    {
+        //        Id = author.Id,
+        //        Name = author.Name,
+        //        Surname = author.Surname,
+        //        BirthDate = author.BirthDate
+        //    };
+        //}
+
+        //private Publisher MapPublisher(IPublisher publisher)
+        //{
+        //    return new Publisher
+        //    {
+        //        Id = publisher.Id,
+        //        Name = publisher.Name
+        //    };
+        //}
     }
 }

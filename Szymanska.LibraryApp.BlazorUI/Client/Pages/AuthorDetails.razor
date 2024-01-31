@@ -1,0 +1,62 @@
+﻿@page "/author/{Id:int?}"
+@inject IAuthorService AuthorService
+@inject NavigationManager NavigationManager
+
+<PageTitle>LibraryApp</PageTitle>
+
+<h3>@(IsEditMode ? "Edit Author" : "Create New Author")</h3>
+
+<div class="form-group">
+    <label for="name">Name:</label>
+    <input class="form-control" id="name" @bind="Author.Name" />
+</div>
+<div class="form-group">
+    <label for="surname">Surname:</label>
+    <input class="form-control" id="surname" @bind="Author.Surname" />
+</div>
+<div class="form-group">
+    <label for="birthDate">Birth Date:</label>
+    <input type="date" class="form-control" id="birthDate" @bind="Author.BirthDate" />
+</div>
+<div class="form-group">
+    <button class="btn btn-primary" @onclick="SaveAuthor">Save</button>
+    <button class="btn btn-secondary" @onclick="Cancel">Cancel</button>
+</div>
+
+@code {
+    [Parameter]
+    public int? Id { get; set; }
+
+    private Author Author { get; set; } = new Author();
+    private bool IsEditMode => Id.HasValue && Id != 0;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await AuthorService.GetAuthors();
+
+        if (IsEditMode)
+        {
+            // Edit mode - znajdź autora o podanym Id
+            Author = AuthorService.Authors.FirstOrDefault(a => a.Id == Id) ?? new Author();
+        }
+    }
+
+    async Task SaveAuthor()
+    {
+        if (IsEditMode)
+        {
+            await AuthorService.UpdateAuthor(Author.Id, Author);
+        }
+        else
+        {
+            await AuthorService.CreateAuthor(Author);
+        }
+
+        NavigationManager.NavigateTo("/authors");
+    }
+
+    void Cancel()
+    {
+        NavigationManager.NavigateTo("/authors");
+    }
+}

@@ -1,8 +1,17 @@
-﻿@page "/books"
+﻿@page "/"
 @inject IBookService BookService
 @inject NavigationManager NavigationManager
 
+<PageTitle>LibraryApp</PageTitle>
+
 <h3>Books</h3>
+
+<div class="mb-3 input-group">
+    <input class="form-control" id="search" @bind="searchTerm" @onkeyup="OnKeyUp" />
+    <div class="input-group-append">
+        <button class="btn btn-primary" @onclick="SearchBooks">Search</button>
+    </div>
+</div>
 
 <table class="table">
     <thead>
@@ -16,7 +25,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var book in BookService.Books)
+        @foreach (var book in filteredBooks)
         {
             <tr>
                 <td>@book.Name</td>
@@ -41,9 +50,37 @@
 </button>
 
 @code {
+    private string searchTerm = "";
+    private List<Book> filteredBooks = new List<Book>();
+
     protected override async Task OnInitializedAsync()
     {
+        await LoadBooks();
+    }
+
+    private async Task LoadBooks()
+    {
         await BookService.GetBooks();
+        UpdateFilteredBooks();
+    }
+
+    private void UpdateFilteredBooks()
+    {
+        if (string.IsNullOrWhiteSpace(searchTerm))
+        {
+            filteredBooks = BookService.Books.ToList();
+        }
+        else
+        {
+            filteredBooks = BookService.Books
+                .Where(book =>
+                    book.Name.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ||
+                    $"{book.Author?.Name} {book.Author?.Surname}".Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ||
+                    book.Publisher?.Name.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) == true ||
+                    book.ReleaseYear.ToString().Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ||
+                    book.Genre.ToString().Contains(searchTerm, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+        }
     }
 
     void ShowBook(int id)
@@ -54,11 +91,24 @@
     async Task DeleteBook(int id)
     {
         await BookService.DeleteBook(id);
-        await BookService.GetBooks();
+        await LoadBooks();
     }
 
     void CreateNewBook()
     {
         NavigationManager.NavigateTo("/book");
+    }
+
+    private void SearchBooks()
+    {
+        UpdateFilteredBooks();
+    }
+
+    private void OnKeyUp(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter")
+        {
+            SearchBooks();
+        }
     }
 }

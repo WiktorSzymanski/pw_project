@@ -15,7 +15,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Szymanski.LibraryApp.BL\Szymanski.LibraryApp.BL.csproj" />
-    <ProjectReference Include="..\..\Szymanski.LibraryApp.DAOMock\Szymanski.LibraryApp.DAOMock.csproj" />
     <ProjectReference Include="..\..\Szymanski.LibraryApp.Interfaces\Szymanski.LibraryApp.Interfaces.csproj" />
     <ProjectReference Include="..\Client\Szymanska.LibraryApp.BlazorUI.Client.csproj" />
     <ProjectReference Include="..\Shared\Szymanska.LibraryApp.BlazorUI.Shared.csproj" />

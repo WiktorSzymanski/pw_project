@@ -2,7 +2,16 @@
 @inject IAuthorService AuthorService
 @inject NavigationManager NavigationManager
 
+<PageTitle>LibraryApp</PageTitle>
+
 <h3>Authors</h3>
+
+<div class="mb-3 input-group">
+    <input class="form-control" id="search" @bind="searchTerm" @onkeyup="OnKeyUp" />
+    <div class="input-group-append">
+        <button class="btn btn-primary" @onclick="SearchAuthors">Search</button>
+    </div>
+</div>
 
 <table class="table">
     <thead>
@@ -14,7 +23,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var author in AuthorService.Authors)
+        @foreach (var author in filteredAuthors)
         {
             <tr>
                 <td>@author.Name</td>
@@ -37,9 +46,35 @@
 </button>
 
 @code {
+    private string searchTerm = "";
+    private List<Author> filteredAuthors = new List<Author>();
+
     protected override async Task OnInitializedAsync()
     {
+        await LoadAuthors();
+    }
+
+    private async Task LoadAuthors()
+    {
         await AuthorService.GetAuthors();
+        UpdateFilteredAuthors();
+    }
+
+    private void UpdateFilteredAuthors()
+    {
+        if (string.IsNullOrWhiteSpace(searchTerm))
+        {
+            filteredAuthors = AuthorService.Authors.ToList();
+        }
+        else
+        {
+            filteredAuthors = AuthorService.Authors
+                .Where(author =>
+                    author.Name.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ||
+                    author.Surname.Contains(searchTerm, StringComparison.OrdinalIgnoreCase) ||
+                    author.BirthDate.ToShortDateString().Contains(searchTerm, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+        }
     }
 
     void ShowAuthor(int id)
@@ -50,11 +85,24 @@
     async Task DeleteAuthor(int id)
     {
         await AuthorService.DeleteAuthor(id);
-        await AuthorService.GetAuthors();
+        await LoadAuthors();
     }
 
     void CreateNewAuthor()
     {
         NavigationManager.NavigateTo("/author");
+    }
+
+    private void SearchAuthors()
+    {
+        UpdateFilteredAuthors();
+    }
+
+    private void OnKeyUp(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter")
+        {
+            SearchAuthors();
+        }
     }
 }

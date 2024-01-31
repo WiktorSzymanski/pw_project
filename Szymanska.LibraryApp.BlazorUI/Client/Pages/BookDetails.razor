@@ -4,6 +4,8 @@
 @inject IPublisherService PublisherService
 @inject NavigationManager NavigationManager
 
+<PageTitle>LibraryApp</PageTitle>
+
 <h3>@(IsEditMode ? "Edit Book" : "Create New Book")</h3>
 
 <div class="form-group">
@@ -13,7 +15,7 @@
 <div class="form-group">
     <label for="author">Author:</label>
     <select class="form-control" id="author" @bind="SelectedAuthorId">
-        <option value="">Select Author</option>
+        <option value="0">Select Author</option>
         @foreach (var author in AuthorService.Authors)
         {
             <option value="@author.Id">@($"{author.Name} {author.Surname}")</option>
@@ -23,7 +25,7 @@
 <div class="form-group">
     <label for="publisher">Publisher:</label>
     <select class="form-control" id="publisher" @bind="SelectedPublisherId">
-        <option value="">Select Publisher</option>
+        <option value="0">Select Publisher</option>
         @foreach (var publisher in PublisherService.Publishers)
         {
             <option value="@publisher.Id">@publisher.Name</option>
@@ -37,7 +39,6 @@
 <div class="form-group">
     <label for="genre">Genre:</label>
     <select class="form-control" id="genre" @bind="Book.Genre">
-        <option value="">Select Genre</option>
         @foreach (var genreOption in GetGenreOptions())
         {
             <option value="@genreOption">@genreOption</option>
@@ -70,11 +71,6 @@
         await AuthorService.GetAuthors();
         await PublisherService.GetPublishers();
 
-        Console.WriteLine($"Number of loaded authors: {AuthorService.Authors.Count()}");
-        Console.WriteLine($"Number of loaded publishers: {PublisherService.Publishers.Count()}");
-        Console.WriteLine($"Number of loaded books: {BookService.Books.Count()}");
-
-
         if (IsEditMode)
         {
             // Edit mode - znajdź książkę o podanym Id
@@ -89,8 +85,8 @@
         else
         {
             // Create mode - utwórz nową pustą książkę
-            SelectedAuthorId = AuthorService.Authors.FirstOrDefault()?.Id;
-            SelectedPublisherId = PublisherService.Publishers.FirstOrDefault()?.Id;
+            SelectedAuthorId = 0;
+            SelectedPublisherId = 0;
         }
     }
 
@@ -108,13 +104,11 @@
             await BookService.CreateBook(Book);
         }
 
-        //await BookService.GetBooks();
-        //StateHasChanged();
-        NavigationManager.NavigateTo("/books");
+        NavigationManager.NavigateTo("/");
     }
 
     void Cancel()
     {
-        NavigationManager.NavigateTo("/books");
+        NavigationManager.NavigateTo("/");
     }
 }

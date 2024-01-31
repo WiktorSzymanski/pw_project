@@ -2,7 +2,16 @@
 @inject IPublisherService PublisherService
 @inject NavigationManager NavigationManager
 
+<PageTitle>LibraryApp</PageTitle>
+
 <h3>Publishers</h3>
+
+<div class="mb-3 input-group">
+    <input class="form-control" id="search" @bind="searchTerm" @onkeyup="OnKeyUp" />
+    <div class="input-group-append">
+        <button class="btn btn-primary" @onclick="SearchPublishers">Search</button>
+    </div>
+</div>
 
 <table class="table">
     <thead>
@@ -12,7 +21,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var publisher in PublisherService.Publishers)
+        @foreach (var publisher in filteredPublishers)
         {
             <tr>
                 <td>@publisher.Name</td>
@@ -33,9 +42,33 @@
 </button>
 
 @code {
+    private string searchTerm = "";
+    private List<Publisher> filteredPublishers = new List<Publisher>();
+
     protected override async Task OnInitializedAsync()
     {
+        await LoadPublishers();
+    }
+
+    private async Task LoadPublishers()
+    {
         await PublisherService.GetPublishers();
+        UpdateFilteredPublishers();
+    }
+
+    private void UpdateFilteredPublishers()
+    {
+        if (string.IsNullOrWhiteSpace(searchTerm))
+        {
+            filteredPublishers = PublisherService.Publishers.ToList();
+        }
+        else
+        {
+            filteredPublishers = PublisherService.Publishers
+                .Where(publisher =>
+                    publisher.Name.Contains(searchTerm, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+        }
     }
 
     void ShowPublisher(int id)
@@ -46,11 +79,24 @@
     async Task DeletePublisher(int id)
     {
         await PublisherService.DeletePublisher(id);
-        await PublisherService.GetPublishers();
+        await LoadPublishers();
     }
 
     void CreateNewPublisher()
     {
         NavigationManager.NavigateTo("/publisher");
+    }
+
+    private void SearchPublishers()
+    {
+        UpdateFilteredPublishers();
+    }
+
+    private void OnKeyUp(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter")
+        {
+            SearchPublishers();
+        }
     }
 }

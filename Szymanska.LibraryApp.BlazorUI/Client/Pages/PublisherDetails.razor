@@ -1,0 +1,55 @@
+﻿@page "/publisher/{Id:int?}"
+@inject IPublisherService PublisherService
+@inject NavigationManager NavigationManager
+
+<PageTitle>LibraryApp</PageTitle>
+
+<h3>@(IsEditMode ? "Edit Publisher" : "Create New Publisher")</h3>
+
+<div class="form-group">
+    <label for="name">Name:</label>
+    <input class="form-control" id="name" @bind="Publisher.Name" />
+</div>
+
+<div class="form-group">
+    <button class="btn btn-primary" @onclick="SavePublisher">Save</button>
+    <button class="btn btn-secondary" @onclick="Cancel">Cancel</button>
+</div>
+
+@code {
+    [Parameter]
+    public int? Id { get; set; }
+
+    private Publisher Publisher { get; set; } = new Publisher();
+    private bool IsEditMode => Id.HasValue && Id != 0;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await PublisherService.GetPublishers();
+
+        if (IsEditMode)
+        {
+            // Edit mode - znajdź wydawcę o podanym Id
+            Publisher = PublisherService.Publishers.FirstOrDefault(p => p.Id == Id) ?? new Publisher();
+        }
+    }
+
+    async Task SavePublisher()
+    {
+        if (IsEditMode)
+        {
+            await PublisherService.UpdatePublisher(Publisher.Id, Publisher.Name);
+        }
+        else
+        {
+            await PublisherService.CreatePublisher(Publisher.Id, Publisher.Name);
+        }
+
+        NavigationManager.NavigateTo("/publishers");
+    }
+
+    void Cancel()
+    {
+        NavigationManager.NavigateTo("/publishers");
+    }
+}

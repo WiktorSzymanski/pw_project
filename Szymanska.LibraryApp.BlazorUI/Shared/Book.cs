@@ -14,11 +14,13 @@ namespace Szymanska.LibraryApp.BlazorUI.Shared
         public int Id { get; set; }
         public string Name { get; set; }
         public Author? Author { get; set; }
-        [JsonIgnore] IAuthor? IBook.Author
+        [JsonIgnore]
+        IAuthor? IBook.Author
         {
-            get => (IAuthor?) Author;
-            set => Author = (Author?) value;
+            get => (IAuthor?)Author;
+            set => Author = (Author?)value;
         }
+        
         public Publisher? Publisher { get; set; }
 
         [JsonIgnore]

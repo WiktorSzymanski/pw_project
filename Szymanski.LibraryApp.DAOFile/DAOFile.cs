@@ -38,7 +38,16 @@ public class DAOFile : IDAO
     {
         var data = LoadData();
         var biggestId = data.Books.MaxBy(obj => obj.Id)?.Id;
-        var book = new Book() {Id = biggestId.GetValueOrDefault(0) + 1, Name = name, Author = (Author?) author, Publisher = (Publisher?) publisher, ReleaseYear = releaseYear, Genre = genre};
+        var book = new Book()
+        {
+            Id = biggestId.GetValueOrDefault(0) + 1,
+            Name = name,
+            Author = new Author()
+                { Id = author.Id, Name = author.Name, Surname = author.Surname, BirthDate = author.BirthDate },
+            Publisher = new Publisher() { Id = publisher.Id, Name = publisher.Name },
+            ReleaseYear = releaseYear,
+            Genre = genre
+        };
         data.Books.Add(book);
         SaveData(data);
         return book;
@@ -67,12 +76,14 @@ public class DAOFile : IDAO
     public IBook UpdateBook(int id, string name, IAuthor? author, IPublisher? publisher, int releaseYear, Genre genre)
     {
         var data = LoadData();
+        Author? authorObj = (Author?) data.Authors.FirstOrDefault(a => a.Id == author?.Id);
+        Publisher? publisherObj = (Publisher?) data.Publishers.FirstOrDefault(p => p.Id == publisher?.Id);
         var book = data.Books.FirstOrDefault(b => b.Id == id);
         if (book == null) throw new KeyNotFoundException("Book not found.");
 
         book.Name = name;
-        book.Author = (Author?) author;
-        book.Publisher = (Publisher?) publisher;
+        book.Author = authorObj;
+        book.Publisher = publisherObj;
         book.ReleaseYear = releaseYear;
         book.Genre = genre;
     

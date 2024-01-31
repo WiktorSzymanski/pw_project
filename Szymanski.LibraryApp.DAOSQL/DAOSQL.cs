@@ -33,11 +33,14 @@ public class DAOSQL : IDAO
 
     public IBook CreateNewBook(int id, string name, IAuthor author, IPublisher publisher, int releaseYear, Genre genre)
     {
+        
+        Author authorObj = (Author) GetAllAuthors().FirstOrDefault(a => a.Id == author.Id)!;
+        Publisher publisherObj = (Publisher) GetAllPublishers().FirstOrDefault(p => p.Id == publisher.Id)!;
         var book = new Book
         {
             Name = name,
-            Author = (Author) author,
-            Publisher = (Publisher) publisher,
+            Author = authorObj,
+            Publisher = publisherObj,
             ReleaseYear = releaseYear,
             Genre = genre
         };
@@ -70,11 +73,13 @@ public class DAOSQL : IDAO
     public IBook UpdateBook(int id, string name, IAuthor author, IPublisher publisher, int releaseYear, Genre genre)
     {
         var book = _context.Books.Find(id);
+        Author authorObj = (Author) GetAllAuthors().FirstOrDefault(a => a.Id == author.Id)!;
+        Publisher publisherObj = (Publisher) GetAllPublishers().FirstOrDefault(p => p.Id == publisher.Id)!;
         if (book != null)
         {
             book.Name = name;
-            book.Author = (Author) author;
-            book.Publisher = (Publisher) publisher;
+            book.Author = authorObj;
+            book.Publisher = publisherObj;
             book.ReleaseYear = releaseYear;
             book.Genre = genre;
             _context.SaveChanges();
